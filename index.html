@@ -310,20 +310,20 @@
               <img src="./assets/karavan-logo.png" alt="" class="proj-logo"/>Karavan
             </span>
             <div class="proj-badges">
-              <span class="badge-new">NEW</span>
-              <span class="badge-tag">Node.js</span>
-              <span class="badge-tag">Socket.io</span>
-              <span class="badge-tag">Maps API</span>
+              <span class="badge-new">Oct 2024</span>
+              <span class="badge-tag">ASP.NET 8</span>
+              <span class="badge-tag">SignalR</span>
+              <span class="badge-tag">SQL Server</span>
             </div>
           </div>
-          <p class="proj-short">Travel planning platform &mdash; build itineraries, discover routes, share trips in real time.</p>
+          <p class="proj-short">E-commerce platform with multi-tenant architecture, real-time messaging, KYC integration, and payment gateway webhooks.</p>
           <div class="proj-expand">
             <div class="proj-kv">
-              <span class="pk">problem</span><span class="pv">Group travel planning is chaotic &mdash; no shared itinerary, routes are guesswork</span>
-              <span class="pk">solution</span><span class="pv">Collaborative travel board: live sync, route visualisation on map, trip sharing via link</span>
-              <span class="pk">stack</span><span class="pv">Node.js &middot; Express &middot; Socket.io &middot; Google Maps API &middot; MongoDB</span>
-              <span class="pk">features</span><span class="pv">Real-time sync &middot; route planner &middot; place search &middot; exportable itinerary</span>
-              <span class="pk">challenge</span><span class="pv">Conflict-free concurrent edits using operational transforms</span>
+              <span class="pk">type</span><span class="pv">E-commerce platform &middot; Oct 2024 &mdash; Present</span>
+              <span class="pk">stack</span><span class="pv">ASP.NET 8.0 &middot; SQL Server &middot; SignalR &middot; Amazon S3 &middot; ShuftiPro KYC</span>
+              <span class="pk">arch</span><span class="pv">Multi-tenant architecture using wildcard subdomains and tenant-aware middleware</span>
+              <span class="pk">realtime</span><span class="pv">Real-time messaging and notification pipelines built with SignalR</span>
+              <span class="pk">integrations</span><span class="pv">Amazon S3 file storage &middot; ShuftiPro KYC API &middot; payment gateways with secure webhook handling</span>
             </div>
             <div class="proj-footer">
               <a href="https://github.com/rutvik076" target="_blank" rel="noopener" class="proj-gh">&#8599; github.com/rutvik076</a>
@@ -390,21 +390,24 @@
 
         <div class="proj-item" onclick="toggleProj(this)">
           <div class="proj-header">
-            <span class="proj-name">Payment Gateway Integration</span>
+            <span class="proj-name">AI Dev Memory</span>
             <div class="proj-badges">
-              <span class="badge-tag">.NET</span>
-              <span class="badge-tag">RazorPay</span>
-              <span class="badge-tag">Cybersource</span>
+              <span class="badge-new">NEW</span>
+              <span class="badge-tag">Tauri</span>
+              <span class="badge-tag">FastAPI</span>
+              <span class="badge-tag">React</span>
             </div>
           </div>
-          <p class="proj-short">Production NopCommerce plugins for RazorPay and Cybersource &mdash; live for real customers.</p>
+          <p class="proj-short">Privacy-first local developer knowledge base &mdash; save code snippets, fixes, and notes. Everything stays on your machine.</p>
           <div class="proj-expand">
             <div class="proj-kv">
-              <span class="pk">problem</span><span class="pv">Platform needed local (India) and global payment support</span>
-              <span class="pk">solution</span><span class="pv">Custom .NET plugins &mdash; full lifecycle: create, capture, refund, webhook</span>
-              <span class="pk">stack</span><span class="pv">ASP.NET &middot; C# &middot; NopCommerce &middot; RazorPay &middot; Cybersource &middot; SQL Server</span>
-              <span class="pk">challenge</span><span class="pv">Idempotent webhooks and partial-capture edge cases across two gateways</span>
-              <span class="pk">status</span><span class="pv" style="color:var(--accent)">production &mdash; live for real customers</span>
+              <span class="pk">problem</span><span class="pv">Developers repeatedly solve the same problems &mdash; fixes, commands, and snippets get lost or forgotten</span>
+              <span class="pk">solution</span><span class="pv">Local desktop app to capture and search developer memories: snippets, fixes, commands, notes &mdash; no cloud</span>
+              <span class="pk">stack</span><span class="pv">Tauri (Rust) &middot; React + TypeScript &middot; FastAPI &middot; SQLite &middot; SQLAlchemy &middot; Pydantic</span>
+              <span class="pk">arch</span><span class="pv">Tauri window &rarr; FastAPI (localhost:8000) &rarr; SQLite &middot; vector search via ChromaDB (roadmap)</span>
+              <span class="pk">types</span><span class="pv">note &middot; snippet &middot; fix &middot; command &mdash; tagged by project and source</span>
+              <span class="pk">privacy</span><span class="pv">100% offline &middot; no telemetry &middot; all data in local devmemory.db</span>
+              <span class="pk">roadmap</span><span class="pv">AI search via Sentence Transformers &middot; clipboard monitor &middot; Ollama local LLM reasoning</span>
             </div>
             <div class="proj-footer">
               <a href="https://github.com/rutvik076" target="_blank" rel="noopener" class="proj-gh">&#8599; github.com/rutvik076</a>
@@ -412,47 +415,8 @@
           </div>
         </div>
 
-        <div class="proj-item" onclick="toggleProj(this)">
-          <div class="proj-header">
-            <span class="proj-name">Form Application Web API</span>
-            <div class="proj-badges">
-              <span class="badge-tag">ASP.NET</span>
-              <span class="badge-tag">C#</span>
-            </div>
-          </div>
-          <p class="proj-short">ASP.NET Web API backend for dynamic form management and data submission.</p>
-          <div class="proj-expand">
-            <div class="proj-kv">
-              <span class="pk">stack</span><span class="pv">ASP.NET Web API &middot; C# &middot; .NET 6 &middot; SQL Server &middot; Entity Framework</span>
-              <span class="pk">features</span><span class="pv">CRUD &middot; field validation &middot; structured responses &middot; error handling</span>
-              <span class="pk">challenge</span><span class="pv">Schema supporting variable form fields without per-form migrations</span>
-            </div>
-            <div class="proj-footer">
-              <a href="https://github.com/rutvik076" target="_blank" rel="noopener" class="proj-gh">&#8599; github.com/rutvik076</a>
-            </div>
-          </div>
-        </div>
 
-        <div class="proj-item" onclick="toggleProj(this)">
-          <div class="proj-header">
-            <span class="proj-name">All-in-One Fitness API</span>
-            <div class="proj-badges">
-              <span class="badge-tag">Node.js</span>
-              <span class="badge-tag">Express</span>
-            </div>
-          </div>
-          <p class="proj-short">REST API for workout logging, exercise library, and progress tracking.</p>
-          <div class="proj-expand">
-            <div class="proj-kv">
-              <span class="pk">stack</span><span class="pv">Node.js &middot; Express.js &middot; MongoDB &middot; REST API</span>
-              <span class="pk">features</span><span class="pv">Workout logging &middot; exercise library &middot; progress tracking &middot; CRUD</span>
-              <span class="pk">challenge</span><span class="pv">Flexible schema for cardio vs strength workout types</span>
-            </div>
-            <div class="proj-footer">
-              <a href="https://github.com/rutvik076/AllinOneFitness" target="_blank" rel="noopener" class="proj-gh">&#8599; github.com/rutvik076/AllinOneFitness</a>
-            </div>
-          </div>
-        </div>
+
 
       </div>
     </section>
@@ -520,8 +484,8 @@
         </div>
         <div class="stat-card">
           <div class="sc-label">projects</div>
-          <div class="sc-val">6</div>
-          <div class="sc-sub">2 AI &middot; 1 travel</div>
+          <div class="sc-val">4</div>
+          <div class="sc-sub">3 AI &middot; 1 ecommerce</div>
         </div>
       </div>
       <div class="status-row">
@@ -535,12 +499,12 @@
           <span class="chip hi">C#</span>
           <span class="chip hi">.NET</span>
           <span class="chip hi">REST API</span>
-          <span class="chip hi">NopCommerce</span>
+          <span class="chip hi">FastAPI</span>
           <span class="chip">Node.js</span>
           <span class="chip">Express</span>
           <span class="chip">SQL Server</span>
           <span class="chip">OpenAI</span>
-          <span class="chip">Socket.io</span>
+          <span class="chip">SignalR</span>
           <span class="chip">GitHub API</span>
         </div>
       </div>
@@ -598,12 +562,10 @@
 
   /* TERMINAL */
   var PROJECTS = {
-    karavan:     { name:'Karavan',                    isNew:true,  hasDemo:true,  stack:'Node.js · Express · Socket.io · Google Maps API · MongoDB',           problem:'Group travel is chaotic — no shared itinerary, routes are guesswork', solution:'Collaborative travel board with live sync and route visualisation', challenge:'Conflict-free concurrent edits using operational transforms',           github:'github.com/rutvik076' },
-    commentpull: { name:'CommentPull Dev',             isNew:true,  hasDemo:false, stack:'Node.js · Express · GitHub OAuth · GitHub REST API',                  problem:'PR comments scattered — critical feedback gets missed',                solution:'Unified filterable feed for all PR threads and replies',             challenge:'Deduplicating threaded comments via cursor-based pagination',         github:'github.com/rutvik076' },
-    meeting:     { name:'Meeting Assistant',           isNew:true,  hasDemo:false, stack:'Node.js · OpenAI GPT-4 · Whisper API · Express',                     problem:'Manual notes are slow — action items get lost',                       solution:'Audio to transcript to owner-tagged action items, automated',        challenge:'Chunked audio + structured GPT-4 extraction in one pipeline',        github:'github.com/rutvik076' },
-    payment:     { name:'Payment Gateway Integration', isNew:false, hasDemo:false, stack:'ASP.NET · C# · NopCommerce · RazorPay · Cybersource · SQL Server',    problem:'Platform needed local and global payment support',                    solution:'Custom .NET plugins — create, capture, refund, webhook',             challenge:'Idempotent webhooks + partial-capture across two gateways',          github:'github.com/rutvik076' },
-    form:        { name:'Form Application Web API',   isNew:false, hasDemo:false, stack:'ASP.NET Web API · C# · .NET 6 · SQL Server · Entity Framework',       problem:'System needed flexible backend for variable form data',               solution:'Clean REST API with CRUD, validation, structured responses',         challenge:'Schema supporting variable fields without per-form migrations',       github:'github.com/rutvik076' },
-    fitness:     { name:'All-in-One Fitness API',     isNew:false, hasDemo:false, stack:'Node.js · Express.js · MongoDB',                                      problem:'No unified API for fitness tracking with flexible workout types',     solution:'Full CRUD REST API for workouts, exercises, and progress',           challenge:'Flexible schema for cardio vs strength workout types',               github:'github.com/rutvik076/AllinOneFitness' }
+    karavan:     { name:'Karavan',                    isNew:true,  hasDemo:true,  stack:'ASP.NET 8.0 · SQL Server · SignalR · Amazon S3 · ShuftiPro KYC',       problem:'E-commerce platform needing multi-tenancy, real-time comms, and KYC compliance',   solution:'Multi-tenant arch with wildcard subdomains, SignalR pipelines, and secure webhook integrations', challenge:'Tenant-aware middleware across all layers without cross-tenant data leaks',  github:'github.com/rutvik076' },
+    commentpull: { name:'CommentPull Dev',             isNew:true,  hasDemo:false, stack:'Node.js · Express · GitHub OAuth · GitHub REST API',                  problem:'PR comments scattered — critical feedback gets missed',                solution:'Unified filterable feed for all PR threads and replies',             challenge:'Deduplicating threaded comments via cursor-based pagination',         github:'github.com/rutvik076/comment-pull' },
+    meeting:     { name:'Meeting Assistant',           isNew:true,  hasDemo:false, stack:'Node.js · OpenAI GPT-4 · Whisper API · Express',                     problem:'Manual notes are slow — action items get lost',                       solution:'Audio to transcript to owner-tagged action items, automated',        challenge:'Chunked audio + structured GPT-4 extraction in one pipeline',        github:'github.com/rutvik076/meeting-assistant' },
+    aidevmemory: { name:'AI Dev Memory',              isNew:true,  hasDemo:false, stack:'Tauri · React + TypeScript · FastAPI · SQLite · ChromaDB (roadmap)',   problem:'Developer fixes and snippets get lost — same problems get solved twice', solution:'Local desktop app: save, tag, and search dev memories — no cloud, no telemetry', challenge:'Embedding Rust (Tauri) + Python (FastAPI) + React in one offline desktop app', github:'github.com/rutvik076' }
   };
 
   function L(c,h){ return {cls:c,html:h}; }
@@ -611,7 +573,7 @@
   var CMDS = {
     help: function(){ return [L('tg','commands:'),L('tdm','─────────────────────────'),L('','  <span class="tg">about</span>           who is Rutvik'),L('','  <span class="tg">skills</span>          tech stack'),L('','  <span class="tg">projects</span>        all 6 projects'),L('','  <span class="tg">project [name]</span>  deep dive'),L('','  <span class="tg">demo [name]</span>     request demo'),L('','  <span class="tg">experience</span>      work history'),L('','  <span class="tg">hire</span>            availability'),L('','  <span class="tg">contact</span>         reach me'),L('','  <span class="tg">github</span>          open GitHub'),L('','  <span class="tg">clear</span>           clear')]; },
     about: function(){ return [L('tg','about rutvik:'),L('','  software developer · 2+ years'),L('','  focus: <span class="tw">back-end development</span> · APIs · payments'),L('','  strong: <span class="tw">.NET/C#</span> · growing: Node.js &amp; AI'),L('','  education: <span class="tw">MCA completed</span> · BCA'),L('','  location: Pune, India · remote OK')]; },
-    skills: function(){ return [L('tg','tech stack:'),L('','  <span class="tw">C# / .NET</span>            strong'),L('','  <span class="tw">REST API Design</span>       strong'),L('','  <span class="tw">NopCommerce</span>           strong'),L('','  <span class="tw">RazorPay/Cybersource</span>  strong'),L('','  <span class="tw">Node.js / Express</span>     intermediate'),L('','  <span class="tw">SQL Server</span>            intermediate'),L('','  <span class="tw">Socket.io</span>             intermediate'),L('','  <span class="tw">GitHub API / OAuth</span>    intermediate'),L('','  <span class="tw">OpenAI / Whisper</span>      learning')]; },
+    skills: function(){ return [L('tg','tech stack:'),L('','  <span class="tw">C# / .NET</span>            strong'),L('','  <span class="tw">REST API Design</span>       strong'),L('','  <span class="tw">NopCommerce</span>           strong'),L('','  <span class="tw">RazorPay/Cybersource</span>  strong'),L('','  <span class="tw">Node.js / Express</span>     intermediate'),L('','  <span class="tw">SQL Server</span>            intermediate'),L('','  <span class="tw">SignalR</span>               intermediate'),L('','  <span class="tw">GitHub API / OAuth</span>    intermediate'),L('','  <span class="tw">OpenAI / Whisper</span>      learning')]; },
     projects: function(){
       var rows = [L('tg','all projects (6):')];
       Object.keys(PROJECTS).forEach(function(k){
@@ -654,7 +616,7 @@
   };
 
   var ALIASES = { ls:'projects',list:'projects',who:'about',whoami:'about',me:'about',work:'experience',jobs:'experience',available:'hire',email:'contact',reach:'contact',gh:'github' };
-  var CTX     = { help:['about','projects','skills','hire'],about:['skills','experience','hire'],skills:['projects','about'],projects:['project karavan','project commentpull','project payment'],hire:['contact','github'],contact:['github'],project:['demo karavan','projects'],demo:['contact','github'] };
+  var CTX     = { help:['about','projects','skills','hire'],about:['skills','experience','hire'],skills:['projects','about'],projects:['project karavan','project commentpull','project aidevmemory'],hire:['contact','github'],contact:['github'],project:['demo karavan','projects'],demo:['contact','github'] };
 
   function renderLines(lines){
     var b = document.getElementById('t-body');
