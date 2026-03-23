@@ -1,693 +1,1957 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Rutvik Patel — Software Developer. .NET, Node.js, REST APIs, Payment Integrations, AI Tools. Based in Pune, India."/>
-  <title>Rutvik Patel — Software Developer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <style>
-    :root {
-      --bg:     #0e0e0e;
-      --card:   #111111;
-      --card2:  #131313;
-      --border: #1e1e1e;
-      --accent: #00e5a0;
-      --muted:  #484848;
-      --text:   #909090;
-      --white:  #f2f2f2;
-      --mono:   'JetBrains Mono', monospace;
-      --sans:   'Inter', system-ui, sans-serif;
-      --nav-h:  50px;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 15px; line-height: 1.7; overflow-x: hidden; }
-    a { color: inherit; text-decoration: none; }
-    ul { list-style: none; }
-    ::selection { background: var(--accent); color: #000; }
-    ::-webkit-scrollbar { width: 3px; }
-    ::-webkit-scrollbar-thumb { background: #252525; border-radius: 3px; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Rutvik Patel — Software Developer. .NET, Node.js, REST APIs, Payment Integrations, AI Tools. Based in Pune, India."
+    />
+    <title>Rutvik Patel — Software Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0e0e0e;
+        --card: #111111;
+        --card2: #131313;
+        --border: #1e1e1e;
+        --accent: #00e5a0;
+        --muted: #484848;
+        --text: #909090;
+        --white: #f2f2f2;
+        --mono: "JetBrains Mono", monospace;
+        --sans: "Inter", system-ui, sans-serif;
+        --nav-h: 50px;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--sans);
+        font-size: 15px;
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      ul {
+        list-style: none;
+      }
+      ::selection {
+        background: var(--accent);
+        color: #000;
+      }
+      ::-webkit-scrollbar {
+        width: 3px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #252525;
+        border-radius: 3px;
+      }
 
-    /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 300;
-      height: var(--nav-h);
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 1.8rem;
-      background: rgba(14,14,14,.97);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-logo { font-family: var(--mono); font-size: .84rem; color: var(--accent); }
-    .nav-links { display: flex; gap: 1.8rem; }
-    .nav-links a { font-family: var(--mono); font-size: .82rem; color: var(--muted); transition: color .2s; }
-    .nav-links a:hover { color: var(--white); }
-    .nav-ham { display: none; background: none; border: none; cursor: pointer; padding: .3rem; flex-direction: column; gap: 4px; }
-    .nav-ham span { display: block; width: 20px; height: 1px; background: var(--muted); transition: all .25s; }
-    .nav-ham.open span:nth-child(1) { transform: rotate(45deg) translate(3px,3px); }
-    .nav-ham.open span:nth-child(2) { opacity: 0; }
-    .nav-ham.open span:nth-child(3) { transform: rotate(-45deg) translate(3px,-3px); }
+      /* NAV */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 300;
+        height: var(--nav-h);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1.8rem;
+        background: rgba(14, 14, 14, 0.97);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-logo {
+        font-family: var(--mono);
+        font-size: 0.84rem;
+        color: var(--accent);
+      }
+      .nav-links {
+        display: flex;
+        gap: 1.8rem;
+      }
+      .nav-links a {
+        font-family: var(--mono);
+        font-size: 0.82rem;
+        color: var(--muted);
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--white);
+      }
+      .nav-ham {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.3rem;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .nav-ham span {
+        display: block;
+        width: 20px;
+        height: 1px;
+        background: var(--muted);
+        transition: all 0.25s;
+      }
+      .nav-ham.open span:nth-child(1) {
+        transform: rotate(45deg) translate(3px, 3px);
+      }
+      .nav-ham.open span:nth-child(2) {
+        opacity: 0;
+      }
+      .nav-ham.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(3px, -3px);
+      }
 
-    /* MOBILE MENU */
-    .mobile-menu {
-      display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; z-index: 299;
-      background: rgba(14,14,14,.98); border-bottom: 1px solid var(--border);
-      padding: 1.2rem 1.8rem; flex-direction: column; gap: .9rem;
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a { font-family: var(--mono); font-size: .88rem; color: var(--muted); }
-    .mobile-menu a:hover { color: var(--white); }
+      /* MOBILE MENU */
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        top: var(--nav-h);
+        left: 0;
+        right: 0;
+        z-index: 299;
+        background: rgba(14, 14, 14, 0.98);
+        border-bottom: 1px solid var(--border);
+        padding: 1.2rem 1.8rem;
+        flex-direction: column;
+        gap: 0.9rem;
+      }
+      .mobile-menu.open {
+        display: flex;
+      }
+      .mobile-menu a {
+        font-family: var(--mono);
+        font-size: 0.88rem;
+        color: var(--muted);
+      }
+      .mobile-menu a:hover {
+        color: var(--white);
+      }
 
-    /* LAYOUT 60:40 */
-    .layout { display: grid; grid-template-columns: 3fr 2fr; min-height: calc(100vh - var(--nav-h)); margin-top: var(--nav-h); }
-    .left { border-right: 1px solid var(--border); padding: 3rem 2.8rem 5rem; min-width: 0; }
-    .right { position: sticky; top: var(--nav-h); height: calc(100vh - var(--nav-h)); display: flex; flex-direction: column; overflow: hidden; }
+      /* LAYOUT 60:40 */
+      .layout {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        min-height: calc(100vh - var(--nav-h));
+        margin-top: var(--nav-h);
+      }
+      .left {
+        border-right: 1px solid var(--border);
+        padding: 3rem 2.8rem 5rem;
+        min-width: 0;
+      }
+      .right {
+        position: sticky;
+        top: var(--nav-h);
+        height: calc(100vh - var(--nav-h));
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
 
-    /* HERO */
-    #hero { padding-bottom: 2.8rem; border-bottom: 1px solid var(--border); margin-bottom: 2.8rem; }
-    .hero-tag { font-family: var(--mono); font-size: .74rem; color: var(--accent); display: flex; align-items: center; gap: .45rem; margin-bottom: 1.1rem; }
-    .hero-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; animation: blink 2.4s ease-in-out infinite; }
-    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: .1; } }
-    .hero-role { margin-bottom: 1.5rem; }
-    h1 { font-family: var(--mono); font-weight: 700; color: var(--white); font-size: clamp(1.75rem, 2.8vw, 2.5rem); line-height: 1.12; margin-bottom: .5rem; }
-    .hero-role { font-family: var(--mono); font-size: .8rem; color: var(--muted); }
-    .hero-desc { font-size: .92rem; color: var(--text); line-height: 1.85; margin-bottom: 1.7rem; }
-    .hero-desc strong { color: var(--white); font-weight: 500; }
-    .hero-links { display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap; }
-    .hero-links a { font-family: var(--mono); font-size: .82rem; color: var(--muted); transition: color .2s; }
-    .hero-links a:hover { color: var(--accent); }
-    .sep { color: var(--border); }
+      /* HERO */
+      #hero {
+        padding-bottom: 2.8rem;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 2.8rem;
+      }
+      .hero-tag {
+        font-family: var(--mono);
+        font-size: 0.74rem;
+        color: var(--accent);
+        display: flex;
+        align-items: center;
+        gap: 0.45rem;
+        margin-bottom: 1.1rem;
+      }
+      .hero-tag::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--accent);
+        flex-shrink: 0;
+        animation: blink 2.4s ease-in-out infinite;
+      }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.1;
+        }
+      }
+      .hero-role {
+        margin-bottom: 1.5rem;
+      }
+      h1 {
+        font-family: var(--mono);
+        font-weight: 700;
+        color: var(--white);
+        font-size: clamp(1.75rem, 2.8vw, 2.5rem);
+        line-height: 1.12;
+        margin-bottom: 0.5rem;
+      }
+      .hero-role {
+        font-family: var(--mono);
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+      .hero-desc {
+        font-size: 0.92rem;
+        color: var(--text);
+        line-height: 1.85;
+        margin-bottom: 1.7rem;
+      }
+      .hero-desc strong {
+        color: var(--white);
+        font-weight: 500;
+      }
+      .hero-links {
+        display: flex;
+        gap: 1.2rem;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .hero-links a {
+        font-family: var(--mono);
+        font-size: 0.82rem;
+        color: var(--muted);
+        transition: color 0.2s;
+      }
+      .hero-links a:hover {
+        color: var(--accent);
+      }
+      .sep {
+        color: var(--border);
+      }
 
-    /* SECTIONS */
-    .section { margin-bottom: 2.8rem; padding-bottom: 2.8rem; border-bottom: 1px solid var(--border); }
-    .section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-    .s-label { font-family: var(--mono); font-size: .68rem; color: var(--muted); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 1.5rem; }
+      /* SECTIONS */
+      .section {
+        margin-bottom: 2.8rem;
+        padding-bottom: 2.8rem;
+        border-bottom: 1px solid var(--border);
+      }
+      .section:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      .s-label {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        color: var(--muted);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+      }
 
-    /* ABOUT */
-    .about-text { font-size: .92rem; color: var(--text); line-height: 1.9; }
-    .about-text strong { color: var(--white); font-weight: 500; }
-    .meta-row { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.6rem; }
-    .meta-item { font-family: var(--mono); font-size: .76rem; }
-    .mk { color: var(--muted); }
-    .mv { color: var(--white); margin-left: .35rem; }
+      /* ABOUT */
+      .about-text {
+        font-size: 0.92rem;
+        color: var(--text);
+        line-height: 1.9;
+      }
+      .about-text strong {
+        color: var(--white);
+        font-weight: 500;
+      }
+      .meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-top: 1.6rem;
+      }
+      .meta-item {
+        font-family: var(--mono);
+        font-size: 0.76rem;
+      }
+      .mk {
+        color: var(--muted);
+      }
+      .mv {
+        color: var(--white);
+        margin-left: 0.35rem;
+      }
 
-    /* SKILLS */
-    .skills-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 2rem; }
-    .skill-line { font-family: var(--mono); font-size: .8rem; color: var(--text); display: flex; align-items: center; gap: .55rem; padding: .28rem 0; border-bottom: 1px solid #181818; }
-    .sk-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
-    .skill-lvl { color: var(--muted); font-size: .68rem; margin-left: auto; }
+      /* SKILLS */
+      .skills-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 2rem;
+      }
+      .skill-line {
+        font-family: var(--mono);
+        font-size: 0.8rem;
+        color: var(--text);
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        padding: 0.28rem 0;
+        border-bottom: 1px solid #181818;
+      }
+      .sk-dot {
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--accent);
+        flex-shrink: 0;
+      }
+      .skill-lvl {
+        color: var(--muted);
+        font-size: 0.68rem;
+        margin-left: auto;
+      }
 
-    /* PROJECTS */
-    .proj-list { display: flex; flex-direction: column; gap: .45rem; }
-    .proj-item { border: 1px solid var(--border); border-radius: 5px; padding: 1rem 1.2rem; background: var(--card); cursor: pointer; transition: border-color .2s; }
-    .proj-item:hover { border-color: #2a2a2a; }
-    .proj-item.active { border-color: rgba(0,229,160,.3); }
-    .proj-header { display: flex; align-items: baseline; justify-content: space-between; gap: .8rem; margin-bottom: .4rem; }
-    .proj-name { font-family: var(--mono); font-size: .88rem; color: var(--white); font-weight: 500; flex-shrink: 0; display: flex; align-items: center; gap: .4rem; }
-    .proj-logo { width: 14px; height: 14px; border-radius: 2px; object-fit: contain; opacity: .75; flex-shrink: 0; }
-    .proj-badges { display: flex; gap: .3rem; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
-    .badge-new { font-family: var(--mono); font-size: .72rem; font-weight: 700; color: #000; background: var(--accent); padding: .1rem .42rem; border-radius: 3px; }
-    .badge-tag { font-family: var(--mono); font-size: .72rem; color: #383838; border: 1px solid #1e1e1e; padding: .08rem .42rem; border-radius: 3px; }
-    .badge-live { font-family: var(--mono); font-size: .68rem; font-weight: 700; color: #000; background: var(--accent); padding: .1rem .52rem; border-radius: 3px; display: inline-flex; align-items: center; gap: .35rem; }
-    .badge-live::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #000; display: inline-block; animation: blink 1.8s ease-in-out infinite; }
-    .badge-wip { font-family: var(--mono); font-size: .68rem; font-weight: 600; color: #fbbf24; background: rgba(251,191,36,.1); border: 1px solid rgba(251,191,36,.25); padding: .1rem .52rem; border-radius: 3px; }
-    .proj-short { font-size: .84rem; color: var(--muted); line-height: 1.6; }
-    .proj-expand { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #1a1a1a; }
-    .proj-item.active .proj-expand { display: block; }
-    .proj-kv { display: grid; grid-template-columns: 72px 1fr; gap: .28rem .7rem; margin-bottom: .85rem; }
-    .pk { font-family: var(--mono); font-size: .7rem; color: #303030; padding-top: .05rem; }
-    .pv { font-family: var(--mono); font-size: .76rem; color: var(--text); line-height: 1.6; }
-    .proj-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .6rem; }
-    .proj-gh { font-family: var(--mono); font-size: .76rem; color: var(--accent); }
-    .proj-gh:hover { text-decoration: underline; }
-    .demo-btn { font-family: var(--mono); font-size: .73rem; color: var(--accent); border: 1px solid rgba(0,229,160,.25); background: rgba(0,229,160,.05); padding: .25rem .7rem; border-radius: 4px; cursor: pointer; transition: all .2s; }
-    .demo-btn:hover { background: rgba(0,229,160,.12); }
-    .demo-box { display: none; margin-top: .8rem; padding: .8rem; border-radius: 4px; background: #0c0c0c; border: 1px solid var(--border); font-family: var(--mono); font-size: .78rem; color: var(--text); line-height: 1.75; }
-    .demo-box.open { display: block; }
-    .demo-box .dh { color: var(--accent); margin-bottom: .4rem; }
-    .demo-box a { color: var(--accent); text-decoration: underline; }
+      /* PROJECTS */
+      .proj-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.45rem;
+      }
+      .proj-item {
+        border: 1px solid var(--border);
+        border-radius: 5px;
+        padding: 1rem 1.2rem;
+        background: var(--card);
+        cursor: pointer;
+        transition: border-color 0.2s;
+      }
+      .proj-item:hover {
+        border-color: #2a2a2a;
+      }
+      .proj-item.active {
+        border-color: rgba(0, 229, 160, 0.3);
+      }
+      .proj-header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 0.8rem;
+        margin-bottom: 0.4rem;
+      }
+      .proj-name {
+        font-family: var(--mono);
+        font-size: 0.88rem;
+        color: var(--white);
+        font-weight: 500;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+      .proj-logo {
+        width: 14px;
+        height: 14px;
+        border-radius: 2px;
+        object-fit: contain;
+        opacity: 0.75;
+        flex-shrink: 0;
+      }
+      .proj-badges {
+        display: flex;
+        gap: 0.3rem;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .badge-new {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: #000;
+        background: var(--accent);
+        padding: 0.1rem 0.42rem;
+        border-radius: 3px;
+      }
+      .badge-tag {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: #383838;
+        border: 1px solid #1e1e1e;
+        padding: 0.08rem 0.42rem;
+        border-radius: 3px;
+      }
+      .badge-live {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        font-weight: 700;
+        color: #000;
+        background: var(--accent);
+        padding: 0.1rem 0.52rem;
+        border-radius: 3px;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+      }
+      .badge-live::before {
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #000;
+        display: inline-block;
+        animation: blink 1.8s ease-in-out infinite;
+      }
+      .badge-wip {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        font-weight: 600;
+        color: #fbbf24;
+        background: rgba(251, 191, 36, 0.1);
+        border: 1px solid rgba(251, 191, 36, 0.25);
+        padding: 0.1rem 0.52rem;
+        border-radius: 3px;
+      }
+      .proj-short {
+        font-size: 0.84rem;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+      .proj-expand {
+        display: none;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid #1a1a1a;
+      }
+      .proj-item.active .proj-expand {
+        display: block;
+      }
+      .proj-kv {
+        display: grid;
+        grid-template-columns: 72px 1fr;
+        gap: 0.28rem 0.7rem;
+        margin-bottom: 0.85rem;
+      }
+      .pk {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        color: #303030;
+        padding-top: 0.05rem;
+      }
+      .pv {
+        font-family: var(--mono);
+        font-size: 0.76rem;
+        color: var(--text);
+        line-height: 1.6;
+      }
+      .proj-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+      }
+      .proj-gh {
+        font-family: var(--mono);
+        font-size: 0.76rem;
+        color: var(--accent);
+      }
+      .proj-gh:hover {
+        text-decoration: underline;
+      }
+      .demo-btn {
+        font-family: var(--mono);
+        font-size: 0.73rem;
+        color: var(--accent);
+        border: 1px solid rgba(0, 229, 160, 0.25);
+        background: rgba(0, 229, 160, 0.05);
+        padding: 0.25rem 0.7rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .demo-btn:hover {
+        background: rgba(0, 229, 160, 0.12);
+      }
+      .demo-box {
+        display: none;
+        margin-top: 0.8rem;
+        padding: 0.8rem;
+        border-radius: 4px;
+        background: #0c0c0c;
+        border: 1px solid var(--border);
+        font-family: var(--mono);
+        font-size: 0.78rem;
+        color: var(--text);
+        line-height: 1.75;
+      }
+      .demo-box.open {
+        display: block;
+      }
+      .demo-box .dh {
+        color: var(--accent);
+        margin-bottom: 0.4rem;
+      }
+      .demo-box a {
+        color: var(--accent);
+        text-decoration: underline;
+      }
 
-    /* EXPERIENCE */
-    .exp-list { display: flex; flex-direction: column; gap: 1.6rem; }
-    .exp-item { padding-left: 1rem; border-left: 1px solid #1e1e1e; }
-    .exp-date { font-family: var(--mono); font-size: .72rem; color: var(--muted); margin-bottom: .22rem; }
-    .exp-role { font-family: var(--mono); font-size: .78rem; color: var(--white); font-weight: 500; margin-bottom: .1rem; }
-    .exp-co { font-size: .8rem; color: var(--muted); margin-bottom: .5rem; }
-    .exp-pts { font-size: .84rem; color: var(--text); line-height: 1.75; }
-    .exp-pts li { padding-left: .85rem; position: relative; margin-bottom: .22rem; }
-    .exp-pts li::before { content: '—'; position: absolute; left: 0; color: #282828; }
+      /* EXPERIENCE */
+      .exp-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+      }
+      .exp-item {
+        padding-left: 1rem;
+        border-left: 1px solid #1e1e1e;
+      }
+      .exp-date {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--muted);
+        margin-bottom: 0.22rem;
+      }
+      .exp-role {
+        font-family: var(--mono);
+        font-size: 0.78rem;
+        color: var(--white);
+        font-weight: 500;
+        margin-bottom: 0.1rem;
+      }
+      .exp-co {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 0.5rem;
+      }
+      .exp-pts {
+        font-size: 0.84rem;
+        color: var(--text);
+        line-height: 1.75;
+      }
+      .exp-pts li {
+        padding-left: 0.85rem;
+        position: relative;
+        margin-bottom: 0.22rem;
+      }
+      .exp-pts li::before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        color: #282828;
+      }
 
-    /* CONTACT */
-    .contact-list { display: flex; flex-direction: column; gap: .55rem; }
-    .contact-line { font-family: var(--mono); font-size: .82rem; display: flex; gap: .9rem; }
-    .ck { color: var(--muted); min-width: 70px; }
-    .contact-line a { color: var(--text); transition: color .2s; }
-    .contact-line a:hover { color: var(--accent); }
-    .cv { color: var(--text); }
+      /* CONTACT */
+      .contact-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.55rem;
+      }
+      .contact-line {
+        font-family: var(--mono);
+        font-size: 0.82rem;
+        display: flex;
+        gap: 0.9rem;
+      }
+      .ck {
+        color: var(--muted);
+        min-width: 70px;
+      }
+      .contact-line a {
+        color: var(--text);
+        transition: color 0.2s;
+      }
+      .contact-line a:hover {
+        color: var(--accent);
+      }
+      .cv {
+        color: var(--text);
+      }
 
-    /* RIGHT SIDEBAR */
-    .stats-block { padding: 1.2rem 1.1rem 1rem; border-bottom: 1px solid var(--border); flex-shrink: 0; }
-    .stats-title { font-family: var(--mono); font-size: .7rem; color: #6b7280; letter-spacing: .14em; text-transform: uppercase; margin-bottom: .85rem; }
-    .stat-cards { display: grid; grid-template-columns: 1fr 1fr; gap: .45rem; }
-    .stat-card { background: var(--card2); border: 1px solid var(--border); border-radius: 5px; padding: .65rem .75rem; }
-    .sc-label { font-family: var(--mono); font-size: .72rem; color: #8a8fa8; margin-bottom: .3rem; }
-    .sc-val { font-family: var(--mono); font-size: 1.1rem; color: #ffffff; font-weight: 700; line-height: 1; }
-    .sc-sub { font-family: var(--mono); font-size: .72rem; color: #7a7f94; margin-top: .25rem; }
-    .sc-bar { height: 2px; background: #1a1a1a; border-radius: 1px; margin-top: .45rem; overflow: hidden; }
-    .sc-fill { height: 100%; background: var(--accent); border-radius: 1px; }
-    .status-row { display: flex; align-items: center; gap: .5rem; margin-top: .5rem; padding: .58rem .75rem; background: var(--card2); border: 1px solid var(--border); border-radius: 5px; }
-    .status-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; animation: blink 2.4s ease-in-out infinite; }
-    .status-text { font-family: var(--mono); font-size: .73rem; color: var(--accent); }
-    .status-sub { font-family: var(--mono); font-size: .73rem; color: #8a8fa8; margin-left: auto; }
-    .stack-row { margin-top: .45rem; padding: .58rem .75rem; background: var(--card2); border: 1px solid var(--border); border-radius: 5px; }
-    .stack-lbl { font-family: var(--mono); font-size: .73rem; color: #8a8fa8; margin-bottom: .38rem; }
-    .stack-chips { display: flex; flex-wrap: wrap; gap: .25rem; }
-    .chip { font-family: var(--mono); font-size: .74rem; color: #909090; border: 1px solid #2e2e2e; padding: .12rem .45rem; border-radius: 3px; }
-    .chip.hi { color: rgba(0,229,160,.9); border-color: rgba(0,229,160,.25); }
+      /* RIGHT SIDEBAR */
+      .stats-block {
+        padding: 1.2rem 1.1rem 1rem;
+        border-bottom: 1px solid var(--border);
+        flex-shrink: 0;
+      }
+      .stats-title {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        color: #6b7280;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 0.85rem;
+      }
+      .stat-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.45rem;
+      }
+      .stat-card {
+        background: var(--card2);
+        border: 1px solid var(--border);
+        border-radius: 5px;
+        padding: 0.65rem 0.75rem;
+      }
+      .sc-label {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: #8a8fa8;
+        margin-bottom: 0.3rem;
+      }
+      .sc-val {
+        font-family: var(--mono);
+        font-size: 1.1rem;
+        color: #ffffff;
+        font-weight: 700;
+        line-height: 1;
+      }
+      .sc-sub {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: #7a7f94;
+        margin-top: 0.25rem;
+      }
+      .sc-bar {
+        height: 2px;
+        background: #1a1a1a;
+        border-radius: 1px;
+        margin-top: 0.45rem;
+        overflow: hidden;
+      }
+      .sc-fill {
+        height: 100%;
+        background: var(--accent);
+        border-radius: 1px;
+      }
+      .status-row {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+        padding: 0.58rem 0.75rem;
+        background: var(--card2);
+        border: 1px solid var(--border);
+        border-radius: 5px;
+      }
+      .status-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--accent);
+        flex-shrink: 0;
+        animation: blink 2.4s ease-in-out infinite;
+      }
+      .status-text {
+        font-family: var(--mono);
+        font-size: 0.73rem;
+        color: var(--accent);
+      }
+      .status-sub {
+        font-family: var(--mono);
+        font-size: 0.73rem;
+        color: #8a8fa8;
+        margin-left: auto;
+      }
+      .stack-row {
+        margin-top: 0.45rem;
+        padding: 0.58rem 0.75rem;
+        background: var(--card2);
+        border: 1px solid var(--border);
+        border-radius: 5px;
+      }
+      .stack-lbl {
+        font-family: var(--mono);
+        font-size: 0.73rem;
+        color: #8a8fa8;
+        margin-bottom: 0.38rem;
+      }
+      .stack-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+      }
+      .chip {
+        font-family: var(--mono);
+        font-size: 0.74rem;
+        color: #909090;
+        border: 1px solid #2e2e2e;
+        padding: 0.12rem 0.45rem;
+        border-radius: 3px;
+      }
+      .chip.hi {
+        color: rgba(0, 229, 160, 0.9);
+        border-color: rgba(0, 229, 160, 0.25);
+      }
 
-    /* TERMINAL */
-    .term-block { flex: 1; display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
-    .term-bar { display: flex; align-items: center; gap: .4rem; padding: .55rem .85rem; background: #0c0c0c; border-bottom: 1px solid var(--border); flex-shrink: 0; }
-    .td { width: 8px; height: 8px; border-radius: 50%; }
-    .td-r { background: #ff5f57; } .td-y { background: #febc2e; } .td-g { background: #28c840; }
-    .term-title { font-family: var(--mono); font-size: .68rem; color: #262626; margin-left: auto; }
-    .t-body { flex: 1; overflow-y: auto; padding: .8rem .9rem .5rem; font-family: var(--mono); font-size: .76rem; line-height: 1.85; min-height: 0; }
-    .t-body::-webkit-scrollbar { width: 2px; }
-    .t-body::-webkit-scrollbar-thumb { background: #1e1e1e; }
-    .t-ln { margin-bottom: .08rem; word-break: break-word; }
-    .t-ps  { color: var(--accent); }
-    .t-usr { color: var(--white); }
-    .tg  { color: var(--accent); }
-    .tw  { color: var(--white); }
-    .tb  { color: #7c8cf8; }
-    .tr  { color: #f87171; }
-    .ty  { color: #fbbf24; }
-    .tdm { color: #2a2a2a; }
-    .t-chips { display: flex; flex-wrap: wrap; gap: .25rem; margin: .35rem 0 .2rem; }
-    .t-chip { font-family: var(--mono); font-size: .74rem; color: #808080; border: 1px solid #2a2a2a; padding: .1rem .45rem; border-radius: 3px; cursor: pointer; background: none; transition: all .15s; }
-    .t-chip:hover { color: var(--accent); border-color: rgba(0,229,160,.2); }
-    .term-input-row { display: flex; align-items: center; gap: .4rem; padding: .55rem .85rem; border-top: 1px solid var(--border); flex-shrink: 0; background: #0c0c0c; }
-    .t-ps2 { font-family: var(--mono); font-size: .76rem; color: var(--accent); flex-shrink: 0; }
-    .t-input { flex: 1; background: none; border: none; outline: none; font-family: var(--mono); font-size: .76rem; color: var(--white); caret-color: var(--accent); }
-    .t-input::placeholder { color: #555; }
+      /* TERMINAL */
+      .term-block {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        overflow: hidden;
+      }
+      .term-bar {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.55rem 0.85rem;
+        background: #0c0c0c;
+        border-bottom: 1px solid var(--border);
+        flex-shrink: 0;
+      }
+      .td {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+      }
+      .td-r {
+        background: #ff5f57;
+      }
+      .td-y {
+        background: #febc2e;
+      }
+      .td-g {
+        background: #28c840;
+      }
+      .term-title {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        color: #262626;
+        margin-left: auto;
+      }
+      .t-body {
+        flex: 1;
+        overflow-y: auto;
+        padding: 0.8rem 0.9rem 0.5rem;
+        font-family: var(--mono);
+        font-size: 0.76rem;
+        line-height: 1.85;
+        min-height: 0;
+      }
+      .t-body::-webkit-scrollbar {
+        width: 2px;
+      }
+      .t-body::-webkit-scrollbar-thumb {
+        background: #1e1e1e;
+      }
+      .t-ln {
+        margin-bottom: 0.08rem;
+        word-break: break-word;
+      }
+      .t-ps {
+        color: var(--accent);
+      }
+      .t-usr {
+        color: var(--white);
+      }
+      .tg {
+        color: var(--accent);
+      }
+      .tw {
+        color: var(--white);
+      }
+      .tb {
+        color: #7c8cf8;
+      }
+      .tr {
+        color: #f87171;
+      }
+      .ty {
+        color: #fbbf24;
+      }
+      .tdm {
+        color: #2a2a2a;
+      }
+      .t-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+        margin: 0.35rem 0 0.2rem;
+      }
+      .t-chip {
+        font-family: var(--mono);
+        font-size: 0.74rem;
+        color: #808080;
+        border: 1px solid #2a2a2a;
+        padding: 0.1rem 0.45rem;
+        border-radius: 3px;
+        cursor: pointer;
+        background: none;
+        transition: all 0.15s;
+      }
+      .t-chip:hover {
+        color: var(--accent);
+        border-color: rgba(0, 229, 160, 0.2);
+      }
+      .term-input-row {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.55rem 0.85rem;
+        border-top: 1px solid var(--border);
+        flex-shrink: 0;
+        background: #0c0c0c;
+      }
+      .t-ps2 {
+        font-family: var(--mono);
+        font-size: 0.76rem;
+        color: var(--accent);
+        flex-shrink: 0;
+      }
+      .t-input {
+        flex: 1;
+        background: none;
+        border: none;
+        outline: none;
+        font-family: var(--mono);
+        font-size: 0.76rem;
+        color: var(--white);
+        caret-color: var(--accent);
+      }
+      .t-input::placeholder {
+        color: #555;
+      }
 
-    /* FADE */
-    .fade { opacity: 0; transform: translateY(7px); transition: opacity .4s, transform .4s; }
-    .fade.in { opacity: 1; transform: translateY(0); }
+      /* FADE */
+      .fade {
+        opacity: 0;
+        transform: translateY(7px);
+        transition:
+          opacity 0.4s,
+          transform 0.4s;
+      }
+      .fade.in {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-    /* FOOTER */
-    .footer { padding-top: .9rem; font-family: var(--mono); font-size: .68rem; color: #333; }
+      /* FOOTER */
+      .footer {
+        padding-top: 0.9rem;
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        color: #333;
+      }
 
-    /* RESPONSIVE */
-    @media (max-width: 1100px) {
-      .left { padding: 2.5rem 2rem 4rem; }
-      .stats-block { padding: 1rem .9rem .85rem; }
-    }
-    @media (max-width: 860px) {
-      .layout { grid-template-columns: 1fr; }
-      .left { border-right: none; padding: 2rem 1.4rem 3rem; }
-      .right { position: static; height: auto; border-top: 1px solid var(--border); }
-      .stat-cards { grid-template-columns: repeat(4, minmax(100px,1fr)); }
-      .term-block { min-height: 280px; max-height: 340px; }
-      .skills-list { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      .nav-ham { display: flex; }
-    }
-    @media (max-width: 480px) {
-      .left { padding: 1.5rem 1rem 2.5rem; }
-      h1 { font-size: 1.6rem; }
-      .stat-cards { grid-template-columns: 1fr 1fr; }
-      .term-block { min-height: 240px; max-height: 300px; }
-      .proj-kv { grid-template-columns: 62px 1fr; }
-      .meta-row { gap: 1rem; }
-    }
-  </style>
-</head>
-<body>
-
-<nav>
-  <span class="nav-logo">rutvik@dev:~$</span>
-  <div class="nav-links">
-    <a href="#about">about</a>
-    <a href="#skills">skills</a>
-    <a href="#projects">projects</a>
-    <a href="#experience">exp</a>
-    <a href="#contact">contact</a>
-  </div>
-  <button class="nav-ham" id="nav-ham" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<div class="mobile-menu" id="mobile-menu">
-  <a href="#about"      onclick="closeMenu()">about</a>
-  <a href="#skills"     onclick="closeMenu()">skills</a>
-  <a href="#projects"   onclick="closeMenu()">projects</a>
-  <a href="#experience" onclick="closeMenu()">exp</a>
-  <a href="#contact"    onclick="closeMenu()">contact</a>
-</div>
-
-<div class="layout">
-
-  <main class="left">
-
-    <section id="hero">
-      <div class="hero-tag">available for work</div>
-      <h1>Rutvik Patel</h1>
-      <p class="hero-role">.NET &middot; Node.js &middot; Software Developer &middot; Pune, India</p>
-      <p class="hero-desc">
-        I build <strong>software solutions</strong> that work reliably &mdash; REST APIs, payment integrations,
-        and AI-powered tools. Primarily focused on <strong>back-end development</strong>, now expanding into developer tooling and AI automation.
-      </p>
-      <div class="hero-links">
-        <a href="https://github.com/rutvik076" target="_blank" rel="noopener">github &#8599;</a>
-        <span class="sep">&middot;</span>
-        <a href="https://www.linkedin.com/in/rutvik-patel-95502a213/" target="_blank" rel="noopener">linkedin &#8599;</a>
-        <span class="sep">&middot;</span>
-        <a href="mailto:patelrutvik2715@gmail.com">email &#8599;</a>
-        <span class="sep">&middot;</span>
-        <a href="./assets/resume-rutvik.pdf" target="_blank" rel="noopener">resume &#8599;</a>
+      /* RESPONSIVE */
+      @media (max-width: 1100px) {
+        .left {
+          padding: 2.5rem 2rem 4rem;
+        }
+        .stats-block {
+          padding: 1rem 0.9rem 0.85rem;
+        }
+      }
+      @media (max-width: 860px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+        .left {
+          border-right: none;
+          padding: 2rem 1.4rem 3rem;
+        }
+        .right {
+          position: static;
+          height: auto;
+          border-top: 1px solid var(--border);
+        }
+        .stat-cards {
+          grid-template-columns: repeat(4, minmax(100px, 1fr));
+        }
+        .term-block {
+          min-height: 280px;
+          max-height: 340px;
+        }
+        .skills-list {
+          grid-template-columns: 1fr;
+        }
+        .nav-links {
+          display: none;
+        }
+        .nav-ham {
+          display: flex;
+        }
+      }
+      @media (max-width: 480px) {
+        .left {
+          padding: 1.5rem 1rem 2.5rem;
+        }
+        h1 {
+          font-size: 1.6rem;
+        }
+        .stat-cards {
+          grid-template-columns: 1fr 1fr;
+        }
+        .term-block {
+          min-height: 240px;
+          max-height: 300px;
+        }
+        .proj-kv {
+          grid-template-columns: 62px 1fr;
+        }
+        .meta-row {
+          gap: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <span class="nav-logo">rutvik@dev:~$</span>
+      <div class="nav-links">
+        <a href="#about">about</a>
+        <a href="#skills">skills</a>
+        <a href="#projects">projects</a>
+        <a href="#experience">exp</a>
+        <a href="#contact">contact</a>
       </div>
-    </section>
+      <button class="nav-ham" id="nav-ham" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
 
-    <section class="section fade" id="about">
-      <div class="s-label">about</div>
-      <p class="about-text">
-        Software developer with <strong>2+ years</strong> of <strong>back-end development</strong> experience &mdash; building production APIs, payment integrations, and e-commerce systems.
-        Strong in <strong>.NET/C#</strong> and growing fast in <strong>Node.js</strong> and AI integrations.
-        I solve real problems &mdash; my recent projects came from friction I personally experienced as a developer.
-        MCA completed. Open to back-end, full-stack, or software engineering roles.
-      </p>
-      <div class="meta-row">
-        <div class="meta-item"><span class="mk">location</span><span class="mv">Pune, India</span></div>
-        <div class="meta-item"><span class="mk">education</span><span class="mv">MCA &middot; BCA</span></div>
-        <div class="meta-item"><span class="mk">status</span><span class="mv" style="color:var(--accent)">open to work</span></div>
-        <div class="meta-item"><span class="mk">remote</span><span class="mv">yes, preferred</span></div>
-      </div>
-    </section>
-
-    <section class="section fade" id="skills">
-      <div class="s-label">skills</div>
-      <div class="skills-list">
-        <div class="skill-line"><span class="sk-dot"></span>C# / .NET<span class="skill-lvl">strong</span></div>
-        <div class="skill-line"><span class="sk-dot"></span>REST API Design<span class="skill-lvl">strong</span></div>
-        <div class="skill-line"><span class="sk-dot"></span>Node.js<span class="skill-lvl">intermediate</span></div>
-        <div class="skill-line"><span class="sk-dot"></span>Express.js<span class="skill-lvl">intermediate</span></div>
-        <div class="skill-line"><span class="sk-dot"></span>SQL Server<span class="skill-lvl">intermediate</span></div>
-        <div class="skill-line"><span class="sk-dot"></span>NopCommerce<span class="skill-lvl">strong</span></div>
-        <div class="skill-line"><span class="sk-dot"></span>RazorPay / Cybersource<span class="skill-lvl">strong</span></div>
-        <div class="skill-line"><span class="sk-dot"></span>OpenAI / Whisper API<span class="skill-lvl">learning</span></div>
-        <div class="skill-line"><span class="sk-dot"></span>GitHub API / OAuth<span class="skill-lvl">intermediate</span></div>
-        <div class="skill-line"><span class="sk-dot"></span>HTML &middot; CSS &middot; JS<span class="skill-lvl">intermediate</span></div>
-      </div>
-    </section>
-
-    <section class="section fade" id="projects">
-      <div class="s-label">projects &mdash; click to expand</div>
-      <div class="proj-list">
-
-        <div class="proj-item" onclick="toggleProj(this)">
-          <div class="proj-header">
-            <span class="proj-name">
-              <img src="./assets/karavan-logo.png" alt="" class="proj-logo"/>Karavan
-            </span>
-            <div class="proj-badges">
-              <span class="badge-new">Oct 2024</span>
-              <span class="badge-tag">ASP.NET 8</span>
-              <span class="badge-tag">SignalR</span>
-              <span class="badge-tag">SQL Server</span>
-            </div>
-          </div>
-          <p class="proj-short">E-commerce platform with multi-tenant architecture, real-time messaging, KYC integration, and payment gateway webhooks.</p>
-          <div class="proj-expand">
-            <div class="proj-kv">
-              <span class="pk">type</span><span class="pv">E-commerce platform &middot; Oct 2024 &mdash; Present</span>
-              <span class="pk">stack</span><span class="pv">ASP.NET 8.0 &middot; SQL Server &middot; SignalR &middot; Amazon S3 &middot; ShuftiPro KYC</span>
-              <span class="pk">arch</span><span class="pv">Multi-tenant architecture using wildcard subdomains and tenant-aware middleware</span>
-              <span class="pk">realtime</span><span class="pv">Real-time messaging and notification pipelines built with SignalR</span>
-              <span class="pk">integrations</span><span class="pv">Amazon S3 file storage &middot; ShuftiPro KYC API &middot; payment gateways with secure webhook handling</span>
-            </div>
-            <div class="proj-footer">
-              <a href="https://github.com/rutvik076" target="_blank" rel="noopener" class="proj-gh">&#8599; github.com/rutvik076</a>
-              <button class="demo-btn" onclick="toggleDemo(this, event)">&#9654; request demo</button>
-            </div>
-            <div class="demo-box">
-              <div class="dh">// demo info</div>
-              <div>live demo available on request.</div>
-              <div>&#8594; email: <a href="mailto:patelrutvik2715@gmail.com">patelrutvik2715@gmail.com</a></div>
-              <div>&#8594; subject: &ldquo;Karavan Demo Request&rdquo;</div>
-              <div>&#8594; or type <span style="color:var(--accent)">demo karavan</span> in the terminal</div>
-              <div style="margin-top:.5rem;color:var(--muted)">responds within 24 hours</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="proj-item" onclick="toggleProj(this)">
-          <div class="proj-header">
-            <span class="proj-name">CommentPull</span>
-            <div class="proj-badges">
-              <span class="badge-live">LIVE</span>
-              <span class="badge-tag">Next.js 14</span>
-              <span class="badge-tag">Razorpay</span>
-              <span class="badge-tag">Llama 3.3</span>
-            </div>
-          </div>
-          <p class="proj-short">Export YouTube comments as CSV &amp; run AI audience analysis &mdash; powered by Llama 3.3 70B. Free + paid plans. Live on Vercel.</p>
-          <div class="proj-expand">
-            <div class="proj-kv">
-              <span class="pk">problem</span><span class="pv">YouTube creators can&rsquo;t easily analyse what their audience is saying or what to make next</span>
-              <span class="pk">solution</span><span class="pv">Paste any YouTube URL &rarr; export all comments as CSV &rarr; AI gives sentiment, themes, questions &amp; next video ideas</span>
-              <span class="pk">stack</span><span class="pv">Next.js 14 &middot; TypeScript &middot; Supabase (PostgreSQL) &middot; Razorpay &middot; Llama 3.3 70B via Groq &middot; YouTube Data API v3</span>
-              <span class="pk">auth</span><span class="pv">Supabase Auth &middot; Google OAuth &middot; Email OTP</span>
-              <span class="pk">plans</span><span class="pv">Free: 5 downloads/day &middot; 100 comments &nbsp;&nbsp; Premium: unlimited &middot; 10k comments &middot; AI analysis &middot; REST API &middot; &#8377;149/mo</span>
-              <span class="pk">ai</span><span class="pv">Sentiment score &middot; top themes &middot; audience questions &middot; video ideas &middot; analyses 300 comments in &lt;10s</span>
-              <span class="pk">payments</span><span class="pv">Razorpay subscriptions &middot; UPI &middot; cards &middot; netbanking &middot; webhook-driven premium activation</span>
-            </div>
-            <div class="proj-footer">
-              <a href="https://comment-pull-rfot.vercel.app/" target="_blank" rel="noopener" class="proj-gh" style="color:var(--accent)">&#8599; comment-pull-rfot.vercel.app</a>
-              <a href="https://github.com/rutvik076/comment-pull" target="_blank" rel="noopener" class="proj-gh">&#8599; github</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="proj-item" onclick="toggleProj(this)">
-          <div class="proj-header">
-            <span class="proj-name">Meeting Assistant</span>
-            <div class="proj-badges">
-              <span class="badge-wip">IN PROGRESS</span>
-              <span class="badge-tag">Claude Haiku</span>
-              <span class="badge-tag">Whisper</span>
-              <span class="badge-tag">FastAPI</span>
-            </div>
-          </div>
-          <p class="proj-short">Real-time AI interview coach &mdash; listens to your meeting, detects questions, streams answers privately to your phone in ~300ms.</p>
-          <div class="proj-expand">
-            <div class="proj-kv">
-              <span class="pk">problem</span><span class="pv">In interviews and meetings you need instant, contextual answers &mdash; without anyone seeing your screen</span>
-              <span class="pk">solution</span><span class="pv">Microphone &rarr; VAD &rarr; Whisper STT &rarr; Claude Haiku agent &rarr; WebSocket &rarr; phone PWA &mdash; first words in ~300ms</span>
-              <span class="pk">stack</span><span class="pv">Python &middot; faster-whisper &middot; Silero VAD &middot; Claude Haiku &middot; FastAPI &middot; WebSocket &middot; Phone PWA</span>
-              <span class="pk">privacy</span><span class="pv">All STT runs locally &mdash; no audio sent to cloud &middot; answers saved on phone only</span>
-              <span class="pk">features</span><span class="pv">Persona mode (answers as you) &middot; smart SKIP when confident &middot; HINT cards &middot; transcript &middot; session history</span>
-              <span class="pk">latency</span><span class="pv">CPU: ~2&ndash;3s total &nbsp;&middot;&nbsp; GPU (large-v3-turbo): ~1s total</span>
-              <span class="pk">cost</span><span class="pv">Claude Haiku ~$0.001/answer &middot; $5 credit = ~5000 answers</span>
-            </div>
-            <div class="proj-footer">
-              <a href="https://github.com/rutvik076/meeting-assistant" target="_blank" rel="noopener" class="proj-gh">&#8599; github.com/rutvik076/meeting-assistant</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="proj-item" onclick="toggleProj(this)">
-          <div class="proj-header">
-            <span class="proj-name">AI Dev Memory</span>
-            <div class="proj-badges">
-              <span class="badge-wip">IN PROGRESS</span>
-              <span class="badge-tag">Tauri</span>
-              <span class="badge-tag">FastAPI</span>
-              <span class="badge-tag">React</span>
-            </div>
-          </div>
-          <p class="proj-short">Privacy-first local developer knowledge base &mdash; save code snippets, fixes, and notes. Everything stays on your machine.</p>
-          <div class="proj-expand">
-            <div class="proj-kv">
-              <span class="pk">problem</span><span class="pv">Developers repeatedly solve the same problems &mdash; fixes, commands, and snippets get lost or forgotten</span>
-              <span class="pk">solution</span><span class="pv">Local desktop app to capture and search developer memories: snippets, fixes, commands, notes &mdash; no cloud</span>
-              <span class="pk">stack</span><span class="pv">Tauri (Rust) &middot; React + TypeScript &middot; FastAPI &middot; SQLite &middot; SQLAlchemy &middot; Pydantic</span>
-              <span class="pk">arch</span><span class="pv">Tauri window &rarr; FastAPI (localhost:8000) &rarr; SQLite &middot; vector search via ChromaDB (roadmap)</span>
-              <span class="pk">types</span><span class="pv">note &middot; snippet &middot; fix &middot; command &mdash; tagged by project and source</span>
-              <span class="pk">privacy</span><span class="pv">100% offline &middot; no telemetry &middot; all data in local devmemory.db</span>
-              <span class="pk">roadmap</span><span class="pv">AI search via Sentence Transformers &middot; clipboard monitor &middot; Ollama local LLM reasoning</span>
-            </div>
-            <div class="proj-footer">
-              <a href="https://github.com/rutvik076" target="_blank" rel="noopener" class="proj-gh">&#8599; github.com/rutvik076</a>
-            </div>
-          </div>
-        </div>
-
-
-
-
-      </div>
-    </section>
-
-    <section class="section fade" id="experience">
-      <div class="s-label">experience</div>
-      <div class="exp-list">
-        <div class="exp-item">
-          <div class="exp-date">2023 &mdash; present</div>
-          <div class="exp-role">Software Developer (.NET)</div>
-          <div class="exp-co">Banking &amp; Fintech / NopCommerce Platform</div>
-          <ul class="exp-pts">
-            <li>Built RazorPay &amp; Cybersource payment plugins &mdash; full lifecycle including refunds and webhooks</li>
-            <li>REST APIs in C# / ASP.NET for product, order, and inventory management</li>
-            <li>Collaborated with frontend teams on API contracts and data schemas</li>
-          </ul>
-        </div>
-        <div class="exp-item">
-          <div class="exp-date">2022 &mdash; 2023</div>
-          <div class="exp-role">Junior Developer / Intern</div>
-          <div class="exp-co">Backend Development</div>
-          <ul class="exp-pts">
-            <li>.NET MVC applications and form-based Web APIs</li>
-            <li>REST endpoints with SQL Server persistence</li>
-            <li>Agile sprints and code reviews</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section fade" id="contact">
-      <div class="s-label">contact</div>
-      <div class="contact-list">
-        <div class="contact-line"><span class="ck">email</span><a href="mailto:patelrutvik2715@gmail.com">patelrutvik2715@gmail.com</a></div>
-        <div class="contact-line"><span class="ck">linkedin</span><a href="https://www.linkedin.com/in/rutvik-patel-95502a213/" target="_blank" rel="noopener">rutvik-patel-95502a213</a></div>
-        <div class="contact-line"><span class="ck">github</span><a href="https://github.com/rutvik076" target="_blank" rel="noopener">github.com/rutvik076</a></div>
-        <div class="contact-line"><span class="ck">location</span><span class="cv">Pune, India &middot; remote OK</span></div>
-        <div class="contact-line"><span class="ck">response</span><span class="cv">within 24 hours</span></div>
-      </div>
-    </section>
-
-    <div class="footer">&copy; 2024 Rutvik Patel</div>
-
-  </main>
-
-  <aside class="right">
-
-    <div class="stats-block">
-      <div class="stats-title">at a glance</div>
-      <div class="stat-cards">
-        <div class="stat-card">
-          <div class="sc-label">primary stack</div>
-          <div class="sc-val" style="font-size:.95rem;margin-top:.1rem">.NET / C#</div>
-          <div class="sc-bar"><div class="sc-fill" style="width:88%"></div></div>
-        </div>
-        <div class="stat-card">
-          <div class="sc-label">secondary</div>
-          <div class="sc-val" style="font-size:.95rem;margin-top:.1rem">Node.js</div>
-          <div class="sc-bar"><div class="sc-fill" style="width:72%"></div></div>
-        </div>
-        <div class="stat-card">
-          <div class="sc-label">experience</div>
-          <div class="sc-val">2+</div>
-          <div class="sc-sub">yrs in production</div>
-        </div>
-        <div class="stat-card">
-          <div class="sc-label">projects</div>
-          <div class="sc-val">4</div>
-          <div class="sc-sub">3 AI &middot; 1 ecommerce</div>
-        </div>
-      </div>
-      <div class="status-row">
-        <div class="status-dot"></div>
-        <span class="status-text">open to work</span>
-        <span class="status-sub">software dev &middot; remote</span>
-      </div>
-      <div class="stack-row">
-        <div class="stack-lbl">stack snapshot</div>
-        <div class="stack-chips">
-          <span class="chip hi">C#</span>
-          <span class="chip hi">.NET</span>
-          <span class="chip hi">REST API</span>
-          <span class="chip hi">FastAPI</span>
-          <span class="chip">Node.js</span>
-          <span class="chip">Express</span>
-          <span class="chip">SQL Server</span>
-          <span class="chip">OpenAI</span>
-          <span class="chip">SignalR</span>
-          <span class="chip">GitHub API</span>
-        </div>
-      </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#about" onclick="closeMenu()">about</a>
+      <a href="#skills" onclick="closeMenu()">skills</a>
+      <a href="#projects" onclick="closeMenu()">projects</a>
+      <a href="#experience" onclick="closeMenu()">exp</a>
+      <a href="#contact" onclick="closeMenu()">contact</a>
     </div>
 
-    <div class="term-block">
-      <div class="term-bar">
-        <div class="td td-r"></div>
-        <div class="td td-y"></div>
-        <div class="td td-g"></div>
-        <span class="term-title">rutvik &mdash; bash</span>
-      </div>
-      <div class="t-body" id="t-body"></div>
-      <div class="term-input-row">
-        <span class="t-ps2">&#10095;</span>
-        <input class="t-input" id="t-input" type="text" placeholder="type help" autocomplete="off" spellcheck="false"/>
-      </div>
+    <div class="layout">
+      <main class="left">
+        <section id="hero">
+          <div class="hero-tag">available for work</div>
+          <h1>Rutvik Patel</h1>
+          <p class="hero-role">
+            .NET &middot; Node.js &middot; Software Developer &middot; Pune,
+            India
+          </p>
+          <p class="hero-desc">
+            I build <strong>software solutions</strong> that work reliably
+            &mdash; REST APIs, payment integrations, and AI-powered tools.
+            Primarily focused on <strong>back-end development</strong>, now
+            expanding into developer tooling and AI automation.
+          </p>
+          <div class="hero-links">
+            <a
+              href="https://github.com/rutvik076"
+              target="_blank"
+              rel="noopener"
+              >github &#8599;</a
+            >
+            <span class="sep">&middot;</span>
+            <a
+              href="https://www.linkedin.com/in/rutvik-patel-95502a213/"
+              target="_blank"
+              rel="noopener"
+              >linkedin &#8599;</a
+            >
+            <span class="sep">&middot;</span>
+            <a href="mailto:patelrutvik2715@gmail.com">email &#8599;</a>
+            <span class="sep">&middot;</span>
+            <a href="./assets/resume-rutvik.pdf" target="_blank" rel="noopener"
+              >resume &#8599;</a
+            >
+          </div>
+        </section>
+
+        <section class="section fade" id="about">
+          <div class="s-label">about</div>
+          <p class="about-text">
+            Software developer with <strong>2+ years</strong> of
+            <strong>back-end development</strong> experience &mdash; building
+            production APIs, payment integrations, and e-commerce systems.
+            Strong in <strong>.NET/C#</strong> and growing fast in
+            <strong>Node.js</strong> and AI integrations. I solve real problems
+            &mdash; my recent projects came from friction I personally
+            experienced as a developer. MCA completed. Open to back-end,
+            full-stack, or software engineering roles.
+          </p>
+          <div class="meta-row">
+            <div class="meta-item">
+              <span class="mk">location</span
+              ><span class="mv">Pune, India</span>
+            </div>
+            <div class="meta-item">
+              <span class="mk">education</span
+              ><span class="mv">MCA &middot; BCA</span>
+            </div>
+            <div class="meta-item">
+              <span class="mk">status</span
+              ><span class="mv" style="color: var(--accent)">open to work</span>
+            </div>
+            <div class="meta-item">
+              <span class="mk">remote</span
+              ><span class="mv">yes, preferred</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="section fade" id="skills">
+          <div class="s-label">skills</div>
+          <div class="skills-list">
+            <div class="skill-line">
+              <span class="sk-dot"></span>C# / .NET<span class="skill-lvl"
+                >strong</span
+              >
+            </div>
+            <div class="skill-line">
+              <span class="sk-dot"></span>REST API Design<span class="skill-lvl"
+                >strong</span
+              >
+            </div>
+            <div class="skill-line">
+              <span class="sk-dot"></span>Node.js<span class="skill-lvl"
+                >intermediate</span
+              >
+            </div>
+            <div class="skill-line">
+              <span class="sk-dot"></span>Express.js<span class="skill-lvl"
+                >intermediate</span
+              >
+            </div>
+            <div class="skill-line">
+              <span class="sk-dot"></span>SQL Server<span class="skill-lvl"
+                >intermediate</span
+              >
+            </div>
+            <div class="skill-line">
+              <span class="sk-dot"></span>NopCommerce<span class="skill-lvl"
+                >strong</span
+              >
+            </div>
+            <div class="skill-line">
+              <span class="sk-dot"></span>RazorPay / Cybersource<span
+                class="skill-lvl"
+                >strong</span
+              >
+            </div>
+            <div class="skill-line">
+              <span class="sk-dot"></span>OpenAI / Whisper API<span
+                class="skill-lvl"
+                >learning</span
+              >
+            </div>
+            <div class="skill-line">
+              <span class="sk-dot"></span>GitHub API / OAuth<span
+                class="skill-lvl"
+                >intermediate</span
+              >
+            </div>
+            <div class="skill-line">
+              <span class="sk-dot"></span>HTML &middot; CSS &middot; JS<span
+                class="skill-lvl"
+                >intermediate</span
+              >
+            </div>
+          </div>
+        </section>
+
+        <section class="section fade" id="projects">
+          <div class="s-label">projects &mdash; click to expand</div>
+          <div class="proj-list">
+            <div class="proj-item" onclick="toggleProj(this)">
+              <div class="proj-header">
+                <span class="proj-name">
+                  <img
+                    src="./assets/karavan-logo.png"
+                    alt=""
+                    class="proj-logo"
+                  />Karavan
+                </span>
+                <div class="proj-badges">
+                  <span class="badge-new">Oct 2024</span>
+                  <span class="badge-tag">ASP.NET 8</span>
+                  <span class="badge-tag">SignalR</span>
+                  <span class="badge-tag">SQL Server</span>
+                </div>
+              </div>
+              <p class="proj-short">
+                E-commerce platform with multi-tenant architecture, real-time
+                messaging, KYC integration, and payment gateway webhooks.
+              </p>
+              <div class="proj-expand">
+                <div class="proj-kv">
+                  <span class="pk">type</span
+                  ><span class="pv"
+                    >E-commerce platform &middot; Oct 2024 &mdash; Present</span
+                  >
+                  <span class="pk">stack</span
+                  ><span class="pv"
+                    >ASP.NET 8.0 &middot; SQL Server &middot; SignalR &middot;
+                    Amazon S3 &middot; ShuftiPro KYC</span
+                  >
+                  <span class="pk">arch</span
+                  ><span class="pv"
+                    >Multi-tenant architecture using wildcard subdomains and
+                    tenant-aware middleware</span
+                  >
+                  <span class="pk">realtime</span
+                  ><span class="pv"
+                    >Real-time messaging and notification pipelines built with
+                    SignalR</span
+                  >
+                  <span class="pk">integrations</span
+                  ><span class="pv"
+                    >Amazon S3 file storage &middot; ShuftiPro KYC API &middot;
+                    payment gateways with secure webhook handling</span
+                  >
+                </div>
+                <div class="proj-footer">
+                  <a
+                    href="https://github.com/rutvik076"
+                    target="_blank"
+                    rel="noopener"
+                    class="proj-gh"
+                    >&#8599; github.com/rutvik076</a
+                  >
+                  <button class="demo-btn" onclick="toggleDemo(this, event)">
+                    &#9654; request demo
+                  </button>
+                </div>
+                <div class="demo-box">
+                  <div class="dh">// demo info</div>
+                  <div>live demo available on request.</div>
+                  <div>
+                    &#8594; email:
+                    <a href="mailto:patelrutvik2715@gmail.com"
+                      >patelrutvik2715@gmail.com</a
+                    >
+                  </div>
+                  <div>&#8594; subject: &ldquo;Karavan Demo Request&rdquo;</div>
+                  <div>
+                    &#8594; or type
+                    <span style="color: var(--accent)">demo karavan</span> in
+                    the terminal
+                  </div>
+                  <div style="margin-top: 0.5rem; color: var(--muted)">
+                    responds within 24 hours
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="proj-item" onclick="toggleProj(this)">
+              <div class="proj-header">
+                <span class="proj-name">CommentPull</span>
+                <div class="proj-badges">
+                  <span class="badge-live">LIVE</span>
+                  <span class="badge-tag">Next.js 14</span>
+                  <span class="badge-tag">Razorpay</span>
+                  <span class="badge-tag">Llama 3.3</span>
+                </div>
+              </div>
+              <p class="proj-short">
+                Export YouTube comments as CSV &amp; run AI audience analysis
+                &mdash; powered by Llama 3.3 70B. Free + paid plans. Live on
+                Vercel.
+              </p>
+              <div class="proj-expand">
+                <div class="proj-kv">
+                  <span class="pk">problem</span
+                  ><span class="pv"
+                    >YouTube creators can&rsquo;t easily analyse what their
+                    audience is saying or what to make next</span
+                  >
+                  <span class="pk">solution</span
+                  ><span class="pv"
+                    >Paste any YouTube URL &rarr; export all comments as CSV
+                    &rarr; AI gives sentiment, themes, questions &amp; next
+                    video ideas</span
+                  >
+                  <span class="pk">stack</span
+                  ><span class="pv"
+                    >Next.js 14 &middot; TypeScript &middot; Supabase
+                    (PostgreSQL) &middot; Razorpay &middot; Llama 3.3 70B via
+                    Groq &middot; YouTube Data API v3</span
+                  >
+                  <span class="pk">auth</span
+                  ><span class="pv"
+                    >Supabase Auth &middot; Google OAuth &middot; Email
+                    OTP</span
+                  >
+                  <span class="pk">plans</span
+                  ><span class="pv"
+                    >Free: 5 downloads/day &middot; 100 comments &nbsp;&nbsp;
+                    Premium: unlimited &middot; 10k comments &middot; AI
+                    analysis &middot; REST API &middot; &#8377;149/mo</span
+                  >
+                  <span class="pk">ai</span
+                  ><span class="pv"
+                    >Sentiment score &middot; top themes &middot; audience
+                    questions &middot; video ideas &middot; analyses 300
+                    comments in &lt;10s</span
+                  >
+                  <span class="pk">payments</span
+                  ><span class="pv"
+                    >Razorpay subscriptions &middot; UPI &middot; cards &middot;
+                    netbanking &middot; webhook-driven premium activation</span
+                  >
+                </div>
+                <div class="proj-footer">
+                  <a
+                    href="https://comment-pull-rfot.vercel.app/"
+                    target="_blank"
+                    rel="noopener"
+                    class="proj-gh"
+                    style="color: var(--accent)"
+                    >&#8599; comment-pull-rfot.vercel.app</a
+                  >
+                  <a
+                    href="https://github.com/rutvik076/comment-pull"
+                    target="_blank"
+                    rel="noopener"
+                    class="proj-gh"
+                    >&#8599; github</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="proj-item" onclick="toggleProj(this)">
+              <div class="proj-header">
+                <span class="proj-name">Meeting Assistant</span>
+                <div class="proj-badges">
+                  <span class="badge-wip">IN PROGRESS</span>
+                  <span class="badge-tag">Claude Haiku</span>
+                  <span class="badge-tag">Whisper</span>
+                  <span class="badge-tag">FastAPI</span>
+                </div>
+              </div>
+              <p class="proj-short">
+                Real-time AI interview coach &mdash; listens to your meeting,
+                detects questions, streams answers privately to your phone in
+                ~300ms.
+              </p>
+              <div class="proj-expand">
+                <div class="proj-kv">
+                  <span class="pk">problem</span
+                  ><span class="pv"
+                    >In interviews and meetings you need instant, contextual
+                    answers &mdash; without anyone seeing your screen</span
+                  >
+                  <span class="pk">solution</span
+                  ><span class="pv"
+                    >Microphone &rarr; VAD &rarr; Whisper STT &rarr; Claude
+                    Haiku agent &rarr; WebSocket &rarr; phone PWA &mdash; first
+                    words in ~300ms</span
+                  >
+                  <span class="pk">stack</span
+                  ><span class="pv"
+                    >Python &middot; faster-whisper &middot; Silero VAD &middot;
+                    Claude Haiku &middot; FastAPI &middot; WebSocket &middot;
+                    Phone PWA</span
+                  >
+                  <span class="pk">privacy</span
+                  ><span class="pv"
+                    >All STT runs locally &mdash; no audio sent to cloud
+                    &middot; answers saved on phone only</span
+                  >
+                  <span class="pk">features</span
+                  ><span class="pv"
+                    >Persona mode (answers as you) &middot; smart SKIP when
+                    confident &middot; HINT cards &middot; transcript &middot;
+                    session history</span
+                  >
+                  <span class="pk">latency</span
+                  ><span class="pv"
+                    >CPU: ~2&ndash;3s total &nbsp;&middot;&nbsp; GPU
+                    (large-v3-turbo): ~1s total</span
+                  >
+                  <span class="pk">cost</span
+                  ><span class="pv"
+                    >Claude Haiku ~$0.001/answer &middot; $5 credit = ~5000
+                    answers</span
+                  >
+                </div>
+                <div class="proj-footer">
+                  <a
+                    href="https://github.com/rutvik076/meeting-assistant"
+                    target="_blank"
+                    rel="noopener"
+                    class="proj-gh"
+                    >&#8599; github.com/rutvik076/meeting-assistant</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="proj-item" onclick="toggleProj(this)">
+              <div class="proj-header">
+                <span class="proj-name">AI Dev Memory</span>
+                <div class="proj-badges">
+                  <span class="badge-wip">IN PROGRESS</span>
+                  <span class="badge-tag">Tauri</span>
+                  <span class="badge-tag">FastAPI</span>
+                  <span class="badge-tag">React</span>
+                </div>
+              </div>
+              <p class="proj-short">
+                Privacy-first local developer knowledge base &mdash; save code
+                snippets, fixes, and notes. Everything stays on your machine.
+              </p>
+              <div class="proj-expand">
+                <div class="proj-kv">
+                  <span class="pk">problem</span
+                  ><span class="pv"
+                    >Developers repeatedly solve the same problems &mdash;
+                    fixes, commands, and snippets get lost or forgotten</span
+                  >
+                  <span class="pk">solution</span
+                  ><span class="pv"
+                    >Local desktop app to capture and search developer memories:
+                    snippets, fixes, commands, notes &mdash; no cloud</span
+                  >
+                  <span class="pk">stack</span
+                  ><span class="pv"
+                    >Tauri (Rust) &middot; React + TypeScript &middot; FastAPI
+                    &middot; SQLite &middot; SQLAlchemy &middot; Pydantic</span
+                  >
+                  <span class="pk">arch</span
+                  ><span class="pv"
+                    >Tauri window &rarr; FastAPI (localhost:8000) &rarr; SQLite
+                    &middot; vector search via ChromaDB (roadmap)</span
+                  >
+                  <span class="pk">types</span
+                  ><span class="pv"
+                    >note &middot; snippet &middot; fix &middot; command &mdash;
+                    tagged by project and source</span
+                  >
+                  <span class="pk">privacy</span
+                  ><span class="pv"
+                    >100% offline &middot; no telemetry &middot; all data in
+                    local devmemory.db</span
+                  >
+                  <span class="pk">roadmap</span
+                  ><span class="pv"
+                    >AI search via Sentence Transformers &middot; clipboard
+                    monitor &middot; Ollama local LLM reasoning</span
+                  >
+                </div>
+                <div class="proj-footer">
+                  <a
+                    href="https://github.com/rutvik076"
+                    target="_blank"
+                    rel="noopener"
+                    class="proj-gh"
+                    >&#8599; github.com/rutvik076</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section fade" id="experience">
+          <div class="s-label">experience</div>
+          <div class="exp-list">
+            <div class="exp-item">
+              <div class="exp-date">2023 &mdash; present</div>
+              <div class="exp-role">Software Developer (.NET)</div>
+              <div class="exp-co">E-commerce / NopCommerce Platform</div>
+              <ul class="exp-pts">
+                <li>
+                  Implemented multi-tenant architecture using wildcard
+                  subdomains and tenant-aware middleware
+                </li>
+                <li>
+                  Built real-time messaging and notification pipelines with
+                  SignalR.
+                </li>
+                <li>
+                  Integrated Amazon S3, ShuftiPro KYC APIs, and payment gateways
+                  with secure webhook handling.
+                </li>
+              </ul>
+            </div>
+            <div class="exp-item">
+              <div class="exp-date">2022 &mdash; 2023</div>
+              <div class="exp-role">Junior Developer / Intern</div>
+              <div class="exp-co">Backend Development</div>
+              <ul class="exp-pts">
+                <li>
+                  Developed RESTful APIs with JWT authentication and role-based
+                  authorization
+                </li>
+                <li>
+                  Designed content recommendation logic using MongoDB
+                  aggregation pipelines.
+                </li>
+                <li>Agile sprints and code reviews</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section fade" id="contact">
+          <div class="s-label">contact</div>
+          <div class="contact-list">
+            <div class="contact-line">
+              <span class="ck">email</span
+              ><a href="mailto:patelrutvik2715@gmail.com"
+                >patelrutvik2715@gmail.com</a
+              >
+            </div>
+            <div class="contact-line">
+              <span class="ck">linkedin</span
+              ><a
+                href="https://www.linkedin.com/in/rutvik-patel-95502a213/"
+                target="_blank"
+                rel="noopener"
+                >rutvik-patel-95502a213</a
+              >
+            </div>
+            <div class="contact-line">
+              <span class="ck">github</span
+              ><a
+                href="https://github.com/rutvik076"
+                target="_blank"
+                rel="noopener"
+                >github.com/rutvik076</a
+              >
+            </div>
+            <div class="contact-line">
+              <span class="ck">location</span
+              ><span class="cv">Pune, India &middot; remote OK</span>
+            </div>
+            <div class="contact-line">
+              <span class="ck">response</span
+              ><span class="cv">within 24 hours</span>
+            </div>
+          </div>
+        </section>
+
+        <div class="footer">&copy; 2024 Rutvik Patel</div>
+      </main>
+
+      <aside class="right">
+        <div class="stats-block">
+          <div class="stats-title">at a glance</div>
+          <div class="stat-cards">
+            <div class="stat-card">
+              <div class="sc-label">primary stack</div>
+              <div
+                class="sc-val"
+                style="font-size: 0.95rem; margin-top: 0.1rem"
+              >
+                .NET / C#
+              </div>
+              <div class="sc-bar">
+                <div class="sc-fill" style="width: 88%"></div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="sc-label">secondary</div>
+              <div
+                class="sc-val"
+                style="font-size: 0.95rem; margin-top: 0.1rem"
+              >
+                Node.js
+              </div>
+              <div class="sc-bar">
+                <div class="sc-fill" style="width: 72%"></div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="sc-label">experience</div>
+              <div class="sc-val">2+</div>
+              <div class="sc-sub">yrs in production</div>
+            </div>
+            <div class="stat-card">
+              <div class="sc-label">projects</div>
+              <div class="sc-val">4</div>
+              <div class="sc-sub">3 AI &middot; 1 ecommerce</div>
+            </div>
+          </div>
+          <div class="status-row">
+            <div class="status-dot"></div>
+            <span class="status-text">open to work</span>
+            <span class="status-sub">software dev &middot; remote</span>
+          </div>
+          <div class="stack-row">
+            <div class="stack-lbl">stack snapshot</div>
+            <div class="stack-chips">
+              <span class="chip hi">C#</span>
+              <span class="chip hi">.NET</span>
+              <span class="chip hi">REST API</span>
+              <span class="chip hi">FastAPI</span>
+              <span class="chip">Node.js</span>
+              <span class="chip">Express</span>
+              <span class="chip">SQL Server</span>
+              <span class="chip">OpenAI</span>
+              <span class="chip">SignalR</span>
+              <span class="chip">GitHub API</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="term-block">
+          <div class="term-bar">
+            <div class="td td-r"></div>
+            <div class="td td-y"></div>
+            <div class="td td-g"></div>
+            <span class="term-title">rutvik &mdash; bash</span>
+          </div>
+          <div class="t-body" id="t-body"></div>
+          <div class="term-input-row">
+            <span class="t-ps2">&#10095;</span>
+            <input
+              class="t-input"
+              id="t-input"
+              type="text"
+              placeholder="type help"
+              autocomplete="off"
+              spellcheck="false"
+            />
+          </div>
+        </div>
+      </aside>
     </div>
 
-  </aside>
-</div>
+    <script>
+      /* NAV */
+      function toggleMenu() {
+        document.getElementById("nav-ham").classList.toggle("open");
+        document.getElementById("mobile-menu").classList.toggle("open");
+      }
+      function closeMenu() {
+        document.getElementById("nav-ham").classList.remove("open");
+        document.getElementById("mobile-menu").classList.remove("open");
+      }
+      document.getElementById("nav-ham").addEventListener("click", toggleMenu);
 
-<script>
-  /* NAV */
-  function toggleMenu() {
-    document.getElementById('nav-ham').classList.toggle('open');
-    document.getElementById('mobile-menu').classList.toggle('open');
-  }
-  function closeMenu() {
-    document.getElementById('nav-ham').classList.remove('open');
-    document.getElementById('mobile-menu').classList.remove('open');
-  }
-  document.getElementById('nav-ham').addEventListener('click', toggleMenu);
+      /* PROJECTS */
+      function toggleProj(el) {
+        var was = el.classList.contains("active");
+        document.querySelectorAll(".proj-item").forEach(function (p) {
+          p.classList.remove("active");
+        });
+        if (!was) {
+          el.classList.add("active");
+        }
+      }
 
-  /* PROJECTS */
-  function toggleProj(el) {
-    var was = el.classList.contains('active');
-    document.querySelectorAll('.proj-item').forEach(function(p) { p.classList.remove('active'); });
-    if (!was) { el.classList.add('active'); }
-  }
+      /* DEMO */
+      function toggleDemo(btn, e) {
+        e.stopPropagation();
+        var box = btn.closest(".proj-expand").querySelector(".demo-box");
+        box.classList.toggle("open");
+        btn.textContent = box.classList.contains("open")
+          ? "\u2715 close"
+          : "\u25B6 request demo";
+      }
 
-  /* DEMO */
-  function toggleDemo(btn, e) {
-    e.stopPropagation();
-    var box = btn.closest('.proj-expand').querySelector('.demo-box');
-    box.classList.toggle('open');
-    btn.textContent = box.classList.contains('open') ? '\u2715 close' : '\u25B6 request demo';
-  }
-
-  /* SCROLL FADE */
-  var fo = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('in'); });
-  }, { threshold: 0.06 });
-  document.querySelectorAll('.fade').forEach(function(el) { fo.observe(el); });
-
-  /* TERMINAL */
-  var PROJECTS = {
-    karavan:     { name:'Karavan',                    isNew:true,  hasDemo:true,  stack:'ASP.NET 8.0 · SQL Server · SignalR · Amazon S3 · ShuftiPro KYC',       problem:'E-commerce platform needing multi-tenancy, real-time comms, and KYC compliance',   solution:'Multi-tenant arch with wildcard subdomains, SignalR pipelines, and secure webhook integrations', challenge:'Tenant-aware middleware across all layers without cross-tenant data leaks',  github:'github.com/rutvik076' },
-    commentpull: { name:'CommentPull',                 isNew:true,  hasDemo:false, stack:'Next.js 14 · TypeScript · Supabase · Razorpay · Llama 3.3 70B · YouTube Data API v3', problem:'YouTube creators can not analyse what audience says or wants next',    solution:'Paste URL → export comments as CSV → AI gives sentiment, themes, video ideas', challenge:'Razorpay webhook-driven premium activation + rate-limiting free tier', github:'github.com/rutvik076/comment-pull', live:'comment-pull-rfot.vercel.app' },
-    meeting:     { name:'Meeting Assistant',           wip:true,           isNew:true,  hasDemo:false, stack:'Node.js · OpenAI GPT-4 · Whisper API · Express',                     problem:'Manual notes are slow — action items get lost',                       solution:'Audio to transcript to owner-tagged action items, automated',        challenge:'Chunked audio + structured GPT-4 extraction in one pipeline',        github:'github.com/rutvik076/meeting-assistant' },
-    aidevmemory: { name:'AI Dev Memory',               wip:true,              isNew:true,  hasDemo:false, stack:'Tauri · React + TypeScript · FastAPI · SQLite · ChromaDB (roadmap)',   problem:'Developer fixes and snippets get lost — same problems get solved twice', solution:'Local desktop app: save, tag, and search dev memories — no cloud, no telemetry', challenge:'Embedding Rust (Tauri) + Python (FastAPI) + React in one offline desktop app', github:'github.com/rutvik076' }
-  };
-
-  function L(c,h){ return {cls:c,html:h}; }
-
-  var CMDS = {
-    help: function(){ return [L('tg','commands:'),L('tdm','─────────────────────────'),L('','  <span class="tg">about</span>           who is Rutvik'),L('','  <span class="tg">skills</span>          tech stack'),L('','  <span class="tg">projects</span>        all 6 projects'),L('','  <span class="tg">project [name]</span>  deep dive'),L('','  <span class="tg">demo [name]</span>     request demo'),L('','  <span class="tg">experience</span>      work history'),L('','  <span class="tg">hire</span>            availability'),L('','  <span class="tg">contact</span>         reach me'),L('','  <span class="tg">github</span>          open GitHub'),L('','  <span class="tg">clear</span>           clear')]; },
-    about: function(){ return [L('tg','about rutvik:'),L('','  software developer · 2+ years'),L('','  focus: <span class="tw">back-end development</span> · APIs · payments'),L('','  strong: <span class="tw">.NET/C#</span> · growing: Node.js &amp; AI'),L('','  education: <span class="tw">MCA completed</span> · BCA'),L('','  location: Pune, India · remote OK')]; },
-    skills: function(){ return [L('tg','tech stack:'),L('','  <span class="tw">C# / .NET</span>            strong'),L('','  <span class="tw">REST API Design</span>       strong'),L('','  <span class="tw">NopCommerce</span>           strong'),L('','  <span class="tw">RazorPay/Cybersource</span>  strong'),L('','  <span class="tw">Node.js / Express</span>     intermediate'),L('','  <span class="tw">SQL Server</span>            intermediate'),L('','  <span class="tw">SignalR</span>               intermediate'),L('','  <span class="tw">GitHub API / OAuth</span>    intermediate'),L('','  <span class="tw">OpenAI / Whisper</span>      learning')]; },
-    projects: function(){
-      var rows = [L('tg','all projects (6):')];
-      Object.keys(PROJECTS).forEach(function(k){
-        var p = PROJECTS[k];
-        rows.push(L('','  <span class="tg">'+p.name+'</span>'+(p.isNew?' <span class="ty">[new]</span>':'')+(p.hasDemo?' <span class="tb">[demo]</span>':'')));
+      /* SCROLL FADE */
+      var fo = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) e.target.classList.add("in");
+          });
+        },
+        { threshold: 0.06 },
+      );
+      document.querySelectorAll(".fade").forEach(function (el) {
+        fo.observe(el);
       });
-      rows.push(L('tdm','  → project [name] for details'));
-      return rows;
-    },
-    project: function(arg){
-      var key = null;
-      Object.keys(PROJECTS).forEach(function(k){ if((arg||'').indexOf(k)!==-1) key=k; });
-      if(!key) return [L('tr','not found.'),L('tdm','  try: karavan · commentpull · meeting · payment · form · fitness')];
-      var p = PROJECTS[key];
-      var rows = [
-        L('tg',p.name+(p.isNew?' <span class="ty">[new]</span>':'')+(p.hasDemo?' <span class="tb">[demo avail]</span>':'')),
-        L('tdm','─────────────────────────'),
-        L('','  <span class="tdm">problem  </span>  '+p.problem),
-        L('','  <span class="tdm">solution </span>  '+p.solution),
-        L('','  <span class="tdm">stack    </span>  '+p.stack),
-        L('','  <span class="tdm">challenge</span>  '+p.challenge),
-        L('','  <span class="tdm">github   </span>  <span class="tb">'+p.github+'</span>')
-      ];
-      if(p.hasDemo) rows.push(L('tb','  → type: demo '+key));
-      return rows;
-    },
-    demo: function(arg){
-      var key = null;
-      Object.keys(PROJECTS).forEach(function(k){ if((arg||'').indexOf(k)!==-1) key=k; });
-      if(!key) return [L('tr','specify a project. e.g. demo karavan')];
-      var p = PROJECTS[key];
-      if(!p.hasDemo) return [L('tr',p.name+' — no live demo yet.'),L('tdm','  check github for code.')];
-      return [L('tg','demo request — '+p.name),L('tdm','─────────────────────────'),L('','  demo available on request.'),L('','  → email: <span class="tb">patelrutvik2715@gmail.com</span>'),L('','  → subject: "Karavan Demo Request"'),L('','  → response within 24 hours'),L('tb','  or click request demo on the project card')];
-    },
-    experience: function(){ return [L('tg','work history:'),L('','  <span class="tw">2023–now</span>  Software Developer (.NET)'),L('','            RazorPay & Cybersource plugins'),L('','            REST APIs · ASP.NET · C#'),L('',''),L('','  <span class="tw">2022–23</span>   Junior Developer / Intern'),L('','            .NET MVC · Web APIs · Agile')]; },
-    hire: function(){ return [L('tg','availability:'),L('','  status    <span class="tg">open to work</span>'),L('','  roles     Software Dev · Backend · API · .NET'),L('','  type      full-time · freelance · contract'),L('','  remote    yes, preferred'),L('tdm','  → type: contact')]; },
-    contact: function(){ return [L('tg','contact:'),L('','  email     patelrutvik2715@gmail.com'),L('','  linkedin  rutvik-patel-95502a213'),L('','  github    github.com/rutvik076'),L('tdm','  responds within 24h')]; },
-    github: function(){ window.open('https://github.com/rutvik076','_blank','noopener'); return [L('tg','opening github...')]; },
-    clear: function(){ return '__CLEAR__'; }
-  };
 
-  var ALIASES = { ls:'projects',list:'projects',who:'about',whoami:'about',me:'about',work:'experience',jobs:'experience',available:'hire',email:'contact',reach:'contact',gh:'github' };
-  var CTX     = { help:['about','projects','skills','hire'],about:['skills','experience','hire'],skills:['projects','about'],projects:['project karavan','project commentpull','project aidevmemory'],hire:['contact','github'],contact:['github'],project:['demo karavan','projects'],demo:['contact','github'] };
+      /* TERMINAL */
+      var PROJECTS = {
+        karavan: {
+          name: "Karavan",
+          isNew: true,
+          hasDemo: true,
+          stack:
+            "ASP.NET 8.0 · SQL Server · SignalR · Amazon S3 · ShuftiPro KYC",
+          problem:
+            "E-commerce platform needing multi-tenancy, real-time comms, and KYC compliance",
+          solution:
+            "Multi-tenant arch with wildcard subdomains, SignalR pipelines, and secure webhook integrations",
+          challenge:
+            "Tenant-aware middleware across all layers without cross-tenant data leaks",
+          github: "github.com/rutvik076",
+        },
+        commentpull: {
+          name: "CommentPull",
+          isNew: true,
+          hasDemo: false,
+          stack:
+            "Next.js 14 · TypeScript · Supabase · Razorpay · Llama 3.3 70B · YouTube Data API v3",
+          problem:
+            "YouTube creators can not analyse what audience says or wants next",
+          solution:
+            "Paste URL → export comments as CSV → AI gives sentiment, themes, video ideas",
+          challenge:
+            "Razorpay webhook-driven premium activation + rate-limiting free tier",
+          github: "github.com/rutvik076/comment-pull",
+          live: "comment-pull-rfot.vercel.app",
+        },
+        meeting: {
+          name: "Meeting Assistant",
+          wip: true,
+          isNew: true,
+          hasDemo: false,
+          stack: "Node.js · OpenAI GPT-4 · Whisper API · Express",
+          problem: "Manual notes are slow — action items get lost",
+          solution:
+            "Audio to transcript to owner-tagged action items, automated",
+          challenge:
+            "Chunked audio + structured GPT-4 extraction in one pipeline",
+          github: "github.com/rutvik076/meeting-assistant",
+        },
+        aidevmemory: {
+          name: "AI Dev Memory",
+          wip: true,
+          isNew: true,
+          hasDemo: false,
+          stack:
+            "Tauri · React + TypeScript · FastAPI · SQLite · ChromaDB (roadmap)",
+          problem:
+            "Developer fixes and snippets get lost — same problems get solved twice",
+          solution:
+            "Local desktop app: save, tag, and search dev memories — no cloud, no telemetry",
+          challenge:
+            "Embedding Rust (Tauri) + Python (FastAPI) + React in one offline desktop app",
+          github: "github.com/rutvik076",
+        },
+      };
 
-  function renderLines(lines){
-    var b = document.getElementById('t-body');
-    lines.forEach(function(l){
-      var el = document.createElement('div');
-      el.className = 't-ln'+(l.cls?' '+l.cls:'');
-      el.innerHTML = l.html;
-      b.appendChild(el);
-    });
-    b.scrollTop = b.scrollHeight;
-  }
+      function L(c, h) {
+        return { cls: c, html: h };
+      }
 
-  function addChips(list){
-    var b = document.getElementById('t-body');
-    var row = document.createElement('div');
-    row.className = 't-chips';
-    list.forEach(function(c){
-      var btn = document.createElement('button');
-      btn.className = 't-chip'; btn.textContent = c;
-      btn.addEventListener('click', function(){ document.getElementById('t-input').value=c; runCmd(); });
-      row.appendChild(btn);
-    });
-    b.appendChild(row);
-    b.scrollTop = b.scrollHeight;
-  }
+      var CMDS = {
+        help: function () {
+          return [
+            L("tg", "commands:"),
+            L("tdm", "─────────────────────────"),
+            L("", '  <span class="tg">about</span>           who is Rutvik'),
+            L("", '  <span class="tg">skills</span>          tech stack'),
+            L("", '  <span class="tg">projects</span>        all 6 projects'),
+            L("", '  <span class="tg">project [name]</span>  deep dive'),
+            L("", '  <span class="tg">demo [name]</span>     request demo'),
+            L("", '  <span class="tg">experience</span>      work history'),
+            L("", '  <span class="tg">hire</span>            availability'),
+            L("", '  <span class="tg">contact</span>         reach me'),
+            L("", '  <span class="tg">github</span>          open GitHub'),
+            L("", '  <span class="tg">clear</span>           clear'),
+          ];
+        },
+        about: function () {
+          return [
+            L("tg", "about rutvik:"),
+            L("", "  software developer · 2+ years"),
+            L(
+              "",
+              '  focus: <span class="tw">back-end development</span> · APIs · payments',
+            ),
+            L(
+              "",
+              '  strong: <span class="tw">.NET/C#</span> · growing: Node.js &amp; AI',
+            ),
+            L("", '  education: <span class="tw">MCA completed</span> · BCA'),
+            L("", "  location: Pune, India · remote OK"),
+          ];
+        },
+        skills: function () {
+          return [
+            L("tg", "tech stack:"),
+            L("", '  <span class="tw">C# / .NET</span>            strong'),
+            L("", '  <span class="tw">REST API Design</span>       strong'),
+            L("", '  <span class="tw">NopCommerce</span>           strong'),
+            L("", '  <span class="tw">RazorPay/Cybersource</span>  strong'),
+            L(
+              "",
+              '  <span class="tw">Node.js / Express</span>     intermediate',
+            ),
+            L(
+              "",
+              '  <span class="tw">SQL Server</span>            intermediate',
+            ),
+            L(
+              "",
+              '  <span class="tw">SignalR</span>               intermediate',
+            ),
+            L(
+              "",
+              '  <span class="tw">GitHub API / OAuth</span>    intermediate',
+            ),
+            L("", '  <span class="tw">OpenAI / Whisper</span>      learning'),
+          ];
+        },
+        projects: function () {
+          var rows = [L("tg", "all projects (6):")];
+          Object.keys(PROJECTS).forEach(function (k) {
+            var p = PROJECTS[k];
+            rows.push(
+              L(
+                "",
+                '  <span class="tg">' +
+                  p.name +
+                  "</span>" +
+                  (p.isNew ? ' <span class="ty">[new]</span>' : "") +
+                  (p.hasDemo ? ' <span class="tb">[demo]</span>' : ""),
+              ),
+            );
+          });
+          rows.push(L("tdm", "  → project [name] for details"));
+          return rows;
+        },
+        project: function (arg) {
+          var key = null;
+          Object.keys(PROJECTS).forEach(function (k) {
+            if ((arg || "").indexOf(k) !== -1) key = k;
+          });
+          if (!key)
+            return [
+              L("tr", "not found."),
+              L(
+                "tdm",
+                "  try: karavan · commentpull · meeting · payment · form · fitness",
+              ),
+            ];
+          var p = PROJECTS[key];
+          var rows = [
+            L(
+              "tg",
+              p.name +
+                (p.isNew ? ' <span class="ty">[new]</span>' : "") +
+                (p.hasDemo ? ' <span class="tb">[demo avail]</span>' : ""),
+            ),
+            L("tdm", "─────────────────────────"),
+            L("", '  <span class="tdm">problem  </span>  ' + p.problem),
+            L("", '  <span class="tdm">solution </span>  ' + p.solution),
+            L("", '  <span class="tdm">stack    </span>  ' + p.stack),
+            L("", '  <span class="tdm">challenge</span>  ' + p.challenge),
+            L(
+              "",
+              '  <span class="tdm">github   </span>  <span class="tb">' +
+                p.github +
+                "</span>",
+            ),
+          ];
+          if (p.hasDemo) rows.push(L("tb", "  → type: demo " + key));
+          return rows;
+        },
+        demo: function (arg) {
+          var key = null;
+          Object.keys(PROJECTS).forEach(function (k) {
+            if ((arg || "").indexOf(k) !== -1) key = k;
+          });
+          if (!key) return [L("tr", "specify a project. e.g. demo karavan")];
+          var p = PROJECTS[key];
+          if (!p.hasDemo)
+            return [
+              L("tr", p.name + " — no live demo yet."),
+              L("tdm", "  check github for code."),
+            ];
+          return [
+            L("tg", "demo request — " + p.name),
+            L("tdm", "─────────────────────────"),
+            L("", "  demo available on request."),
+            L(
+              "",
+              '  → email: <span class="tb">patelrutvik2715@gmail.com</span>',
+            ),
+            L("", '  → subject: "Karavan Demo Request"'),
+            L("", "  → response within 24 hours"),
+            L("tb", "  or click request demo on the project card"),
+          ];
+        },
+        experience: function () {
+          return [
+            L("tg", "work history:"),
+            L(
+              "",
+              '  <span class="tw">2023–now</span>  Software Developer (.NET)',
+            ),
+            L("", "            RazorPay & Cybersource plugins"),
+            L("", "            REST APIs · ASP.NET · C#"),
+            L("", ""),
+            L(
+              "",
+              '  <span class="tw">2022–23</span>   Junior Developer / Intern',
+            ),
+            L("", "            .NET MVC · Web APIs · Agile"),
+          ];
+        },
+        hire: function () {
+          return [
+            L("tg", "availability:"),
+            L("", '  status    <span class="tg">open to work</span>'),
+            L("", "  roles     Software Dev · Backend · API · .NET"),
+            L("", "  type      full-time · freelance · contract"),
+            L("", "  remote    yes, preferred"),
+            L("tdm", "  → type: contact"),
+          ];
+        },
+        contact: function () {
+          return [
+            L("tg", "contact:"),
+            L("", "  email     patelrutvik2715@gmail.com"),
+            L("", "  linkedin  rutvik-patel-95502a213"),
+            L("", "  github    github.com/rutvik076"),
+            L("tdm", "  responds within 24h"),
+          ];
+        },
+        github: function () {
+          window.open("https://github.com/rutvik076", "_blank", "noopener");
+          return [L("tg", "opening github...")];
+        },
+        clear: function () {
+          return "__CLEAR__";
+        },
+      };
 
-  function escHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+      var ALIASES = {
+        ls: "projects",
+        list: "projects",
+        who: "about",
+        whoami: "about",
+        me: "about",
+        work: "experience",
+        jobs: "experience",
+        available: "hire",
+        email: "contact",
+        reach: "contact",
+        gh: "github",
+      };
+      var CTX = {
+        help: ["about", "projects", "skills", "hire"],
+        about: ["skills", "experience", "hire"],
+        skills: ["projects", "about"],
+        projects: [
+          "project karavan",
+          "project commentpull",
+          "project aidevmemory",
+        ],
+        hire: ["contact", "github"],
+        contact: ["github"],
+        project: ["demo karavan", "projects"],
+        demo: ["contact", "github"],
+      };
 
-  renderLines([L('tg','rutvik patel — portfolio terminal'),L('tdm','type <span class="tg">help</span> to see commands')]);
-  addChips(['help','projects','skills','hire','demo karavan']);
+      function renderLines(lines) {
+        var b = document.getElementById("t-body");
+        lines.forEach(function (l) {
+          var el = document.createElement("div");
+          el.className = "t-ln" + (l.cls ? " " + l.cls : "");
+          el.innerHTML = l.html;
+          b.appendChild(el);
+        });
+        b.scrollTop = b.scrollHeight;
+      }
 
-  var cmdHistory=[], histIndex=-1;
+      function addChips(list) {
+        var b = document.getElementById("t-body");
+        var row = document.createElement("div");
+        row.className = "t-chips";
+        list.forEach(function (c) {
+          var btn = document.createElement("button");
+          btn.className = "t-chip";
+          btn.textContent = c;
+          btn.addEventListener("click", function () {
+            document.getElementById("t-input").value = c;
+            runCmd();
+          });
+          row.appendChild(btn);
+        });
+        b.appendChild(row);
+        b.scrollTop = b.scrollHeight;
+      }
 
-  function runCmd(){
-    var inp = document.getElementById('t-input');
-    var raw = inp.value.trim();
-    if(!raw) return;
-    cmdHistory.unshift(raw); histIndex=-1; inp.value='';
-    var b = document.getElementById('t-body');
-    var pl = document.createElement('div');
-    pl.className='t-ln';
-    pl.innerHTML='<span class="t-ps">&#10095;</span> <span class="t-usr">'+escHtml(raw)+'</span>';
-    b.appendChild(pl);
-    var resolved = ALIASES[raw.toLowerCase()]||raw;
-    var parts=resolved.toLowerCase().split(/\s+/);
-    var cmd=parts[0], arg=parts.slice(1).join(' ');
-    if(cmd==='clear'){ b.innerHTML=''; return; }
-    var result;
-    if(cmd==='project'||cmd==='show') result=CMDS.project(arg);
-    else if(cmd==='demo') result=CMDS.demo(arg);
-    else if(CMDS[cmd]) result=CMDS[cmd]();
-    else result=[L('tr','not found: '+escHtml(cmd)),L('tdm','type help')];
-    if(result!=='__CLEAR__'){ renderLines(result); if(CTX[cmd]) addChips(CTX[cmd]); }
-  }
+      function escHtml(s) {
+        return s
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;");
+      }
 
-  document.getElementById('t-input').addEventListener('keydown', function(e){
-    if(e.key==='Enter'){ runCmd(); }
-    else if(e.key==='ArrowUp'){ histIndex=Math.min(histIndex+1,cmdHistory.length-1); document.getElementById('t-input').value=cmdHistory[histIndex]||''; }
-    else if(e.key==='ArrowDown'){ histIndex=Math.max(histIndex-1,-1); document.getElementById('t-input').value=histIndex<0?'':cmdHistory[histIndex]; }
-    else if(e.key==='Tab'){ e.preventDefault(); var v=document.getElementById('t-input').value.toLowerCase(); var m=Object.keys(CMDS).find(function(k){ return k.indexOf(v)===0&&k!=='clear'; }); if(m) document.getElementById('t-input').value=m; }
-  });
-</script>
-</body>
+      renderLines([
+        L("tg", "rutvik patel — portfolio terminal"),
+        L("tdm", 'type <span class="tg">help</span> to see commands'),
+      ]);
+      addChips(["help", "projects", "skills", "hire", "demo karavan"]);
+
+      var cmdHistory = [],
+        histIndex = -1;
+
+      function runCmd() {
+        var inp = document.getElementById("t-input");
+        var raw = inp.value.trim();
+        if (!raw) return;
+        cmdHistory.unshift(raw);
+        histIndex = -1;
+        inp.value = "";
+        var b = document.getElementById("t-body");
+        var pl = document.createElement("div");
+        pl.className = "t-ln";
+        pl.innerHTML =
+          '<span class="t-ps">&#10095;</span> <span class="t-usr">' +
+          escHtml(raw) +
+          "</span>";
+        b.appendChild(pl);
+        var resolved = ALIASES[raw.toLowerCase()] || raw;
+        var parts = resolved.toLowerCase().split(/\s+/);
+        var cmd = parts[0],
+          arg = parts.slice(1).join(" ");
+        if (cmd === "clear") {
+          b.innerHTML = "";
+          return;
+        }
+        var result;
+        if (cmd === "project" || cmd === "show") result = CMDS.project(arg);
+        else if (cmd === "demo") result = CMDS.demo(arg);
+        else if (CMDS[cmd]) result = CMDS[cmd]();
+        else
+          result = [
+            L("tr", "not found: " + escHtml(cmd)),
+            L("tdm", "type help"),
+          ];
+        if (result !== "__CLEAR__") {
+          renderLines(result);
+          if (CTX[cmd]) addChips(CTX[cmd]);
+        }
+      }
+
+      document
+        .getElementById("t-input")
+        .addEventListener("keydown", function (e) {
+          if (e.key === "Enter") {
+            runCmd();
+          } else if (e.key === "ArrowUp") {
+            histIndex = Math.min(histIndex + 1, cmdHistory.length - 1);
+            document.getElementById("t-input").value =
+              cmdHistory[histIndex] || "";
+          } else if (e.key === "ArrowDown") {
+            histIndex = Math.max(histIndex - 1, -1);
+            document.getElementById("t-input").value =
+              histIndex < 0 ? "" : cmdHistory[histIndex];
+          } else if (e.key === "Tab") {
+            e.preventDefault();
+            var v = document.getElementById("t-input").value.toLowerCase();
+            var m = Object.keys(CMDS).find(function (k) {
+              return k.indexOf(v) === 0 && k !== "clear";
+            });
+            if (m) document.getElementById("t-input").value = m;
+          }
+        });
+    </script>
+  </body>
 </html>
