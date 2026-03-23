@@ -109,6 +109,9 @@
     .proj-badges { display: flex; gap: .3rem; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
     .badge-new { font-family: var(--mono); font-size: .72rem; font-weight: 700; color: #000; background: var(--accent); padding: .1rem .42rem; border-radius: 3px; }
     .badge-tag { font-family: var(--mono); font-size: .72rem; color: #383838; border: 1px solid #1e1e1e; padding: .08rem .42rem; border-radius: 3px; }
+    .badge-live { font-family: var(--mono); font-size: .68rem; font-weight: 700; color: #000; background: var(--accent); padding: .1rem .52rem; border-radius: 3px; display: inline-flex; align-items: center; gap: .35rem; }
+    .badge-live::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #000; display: inline-block; animation: blink 1.8s ease-in-out infinite; }
+    .badge-wip { font-family: var(--mono); font-size: .68rem; font-weight: 600; color: #fbbf24; background: rgba(251,191,36,.1); border: 1px solid rgba(251,191,36,.25); padding: .1rem .52rem; border-radius: 3px; }
     .proj-short { font-size: .84rem; color: var(--muted); line-height: 1.6; }
     .proj-expand { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #1a1a1a; }
     .proj-item.active .proj-expand { display: block; }
@@ -342,24 +345,28 @@
 
         <div class="proj-item" onclick="toggleProj(this)">
           <div class="proj-header">
-            <span class="proj-name">CommentPull Dev</span>
+            <span class="proj-name">CommentPull</span>
             <div class="proj-badges">
-              <span class="badge-new">NEW</span>
-              <span class="badge-tag">Node.js</span>
-              <span class="badge-tag">GitHub API</span>
+              <span class="badge-live">LIVE</span>
+              <span class="badge-tag">Next.js 14</span>
+              <span class="badge-tag">Razorpay</span>
+              <span class="badge-tag">Llama 3.3</span>
             </div>
           </div>
-          <p class="proj-short">Aggregates GitHub PR review comments into a single unified developer feed.</p>
+          <p class="proj-short">Export YouTube comments as CSV &amp; run AI audience analysis &mdash; powered by Llama 3.3 70B. Free + paid plans. Live on Vercel.</p>
           <div class="proj-expand">
             <div class="proj-kv">
-              <span class="pk">problem</span><span class="pv">PR comments scattered across repos &mdash; critical feedback gets missed</span>
-              <span class="pk">solution</span><span class="pv">One unified, filterable feed for all PR threads and replies</span>
-              <span class="pk">stack</span><span class="pv">Node.js &middot; Express &middot; GitHub OAuth 2.0 &middot; GitHub REST API</span>
-              <span class="pk">challenge</span><span class="pv">Deduplicating threaded comments via cursor-based pagination</span>
-              <span class="pk">impact</span><span class="pv">Faster reviews, zero missed feedback on large teams</span>
+              <span class="pk">problem</span><span class="pv">YouTube creators can&rsquo;t easily analyse what their audience is saying or what to make next</span>
+              <span class="pk">solution</span><span class="pv">Paste any YouTube URL &rarr; export all comments as CSV &rarr; AI gives sentiment, themes, questions &amp; next video ideas</span>
+              <span class="pk">stack</span><span class="pv">Next.js 14 &middot; TypeScript &middot; Supabase (PostgreSQL) &middot; Razorpay &middot; Llama 3.3 70B via Groq &middot; YouTube Data API v3</span>
+              <span class="pk">auth</span><span class="pv">Supabase Auth &middot; Google OAuth &middot; Email OTP</span>
+              <span class="pk">plans</span><span class="pv">Free: 5 downloads/day &middot; 100 comments &nbsp;&nbsp; Premium: unlimited &middot; 10k comments &middot; AI analysis &middot; REST API &middot; &#8377;149/mo</span>
+              <span class="pk">ai</span><span class="pv">Sentiment score &middot; top themes &middot; audience questions &middot; video ideas &middot; analyses 300 comments in &lt;10s</span>
+              <span class="pk">payments</span><span class="pv">Razorpay subscriptions &middot; UPI &middot; cards &middot; netbanking &middot; webhook-driven premium activation</span>
             </div>
             <div class="proj-footer">
-              <a href="https://github.com/rutvik076/comment-pull" target="_blank" rel="noopener" class="proj-gh">&#8599; github.com/rutvik076/comment-pull</a>
+              <a href="https://comment-pull-rfot.vercel.app/" target="_blank" rel="noopener" class="proj-gh" style="color:var(--accent)">&#8599; comment-pull-rfot.vercel.app</a>
+              <a href="https://github.com/rutvik076/comment-pull" target="_blank" rel="noopener" class="proj-gh">&#8599; github</a>
             </div>
           </div>
         </div>
@@ -368,19 +375,22 @@
           <div class="proj-header">
             <span class="proj-name">Meeting Assistant</span>
             <div class="proj-badges">
-              <span class="badge-new">NEW</span>
-              <span class="badge-tag">OpenAI</span>
+              <span class="badge-wip">IN PROGRESS</span>
+              <span class="badge-tag">Claude Haiku</span>
               <span class="badge-tag">Whisper</span>
+              <span class="badge-tag">FastAPI</span>
             </div>
           </div>
-          <p class="proj-short">AI tool that transcribes meetings and extracts structured action items automatically.</p>
+          <p class="proj-short">Real-time AI interview coach &mdash; listens to your meeting, detects questions, streams answers privately to your phone in ~300ms.</p>
           <div class="proj-expand">
             <div class="proj-kv">
-              <span class="pk">problem</span><span class="pv">Manual notes are slow and action items get lost after meetings</span>
-              <span class="pk">solution</span><span class="pv">AI pipeline: audio &rarr; transcript &rarr; action items with owners</span>
-              <span class="pk">stack</span><span class="pv">Node.js &middot; OpenAI GPT-4 &middot; Whisper API &middot; Express</span>
-              <span class="pk">challenge</span><span class="pv">Chunked audio processing + structured GPT-4 extraction in one pipeline</span>
-              <span class="pk">output</span><span class="pv">JSON / Markdown summary with owner-tagged action items</span>
+              <span class="pk">problem</span><span class="pv">In interviews and meetings you need instant, contextual answers &mdash; without anyone seeing your screen</span>
+              <span class="pk">solution</span><span class="pv">Microphone &rarr; VAD &rarr; Whisper STT &rarr; Claude Haiku agent &rarr; WebSocket &rarr; phone PWA &mdash; first words in ~300ms</span>
+              <span class="pk">stack</span><span class="pv">Python &middot; faster-whisper &middot; Silero VAD &middot; Claude Haiku &middot; FastAPI &middot; WebSocket &middot; Phone PWA</span>
+              <span class="pk">privacy</span><span class="pv">All STT runs locally &mdash; no audio sent to cloud &middot; answers saved on phone only</span>
+              <span class="pk">features</span><span class="pv">Persona mode (answers as you) &middot; smart SKIP when confident &middot; HINT cards &middot; transcript &middot; session history</span>
+              <span class="pk">latency</span><span class="pv">CPU: ~2&ndash;3s total &nbsp;&middot;&nbsp; GPU (large-v3-turbo): ~1s total</span>
+              <span class="pk">cost</span><span class="pv">Claude Haiku ~$0.001/answer &middot; $5 credit = ~5000 answers</span>
             </div>
             <div class="proj-footer">
               <a href="https://github.com/rutvik076/meeting-assistant" target="_blank" rel="noopener" class="proj-gh">&#8599; github.com/rutvik076/meeting-assistant</a>
@@ -392,7 +402,7 @@
           <div class="proj-header">
             <span class="proj-name">AI Dev Memory</span>
             <div class="proj-badges">
-              <span class="badge-new">NEW</span>
+              <span class="badge-wip">IN PROGRESS</span>
               <span class="badge-tag">Tauri</span>
               <span class="badge-tag">FastAPI</span>
               <span class="badge-tag">React</span>
@@ -563,9 +573,9 @@
   /* TERMINAL */
   var PROJECTS = {
     karavan:     { name:'Karavan',                    isNew:true,  hasDemo:true,  stack:'ASP.NET 8.0 · SQL Server · SignalR · Amazon S3 · ShuftiPro KYC',       problem:'E-commerce platform needing multi-tenancy, real-time comms, and KYC compliance',   solution:'Multi-tenant arch with wildcard subdomains, SignalR pipelines, and secure webhook integrations', challenge:'Tenant-aware middleware across all layers without cross-tenant data leaks',  github:'github.com/rutvik076' },
-    commentpull: { name:'CommentPull Dev',             isNew:true,  hasDemo:false, stack:'Node.js · Express · GitHub OAuth · GitHub REST API',                  problem:'PR comments scattered — critical feedback gets missed',                solution:'Unified filterable feed for all PR threads and replies',             challenge:'Deduplicating threaded comments via cursor-based pagination',         github:'github.com/rutvik076/comment-pull' },
-    meeting:     { name:'Meeting Assistant',           isNew:true,  hasDemo:false, stack:'Node.js · OpenAI GPT-4 · Whisper API · Express',                     problem:'Manual notes are slow — action items get lost',                       solution:'Audio to transcript to owner-tagged action items, automated',        challenge:'Chunked audio + structured GPT-4 extraction in one pipeline',        github:'github.com/rutvik076/meeting-assistant' },
-    aidevmemory: { name:'AI Dev Memory',              isNew:true,  hasDemo:false, stack:'Tauri · React + TypeScript · FastAPI · SQLite · ChromaDB (roadmap)',   problem:'Developer fixes and snippets get lost — same problems get solved twice', solution:'Local desktop app: save, tag, and search dev memories — no cloud, no telemetry', challenge:'Embedding Rust (Tauri) + Python (FastAPI) + React in one offline desktop app', github:'github.com/rutvik076' }
+    commentpull: { name:'CommentPull',                 isNew:true,  hasDemo:false, stack:'Next.js 14 · TypeScript · Supabase · Razorpay · Llama 3.3 70B · YouTube Data API v3', problem:'YouTube creators can not analyse what audience says or wants next',    solution:'Paste URL → export comments as CSV → AI gives sentiment, themes, video ideas', challenge:'Razorpay webhook-driven premium activation + rate-limiting free tier', github:'github.com/rutvik076/comment-pull', live:'comment-pull-rfot.vercel.app' },
+    meeting:     { name:'Meeting Assistant',           wip:true,           isNew:true,  hasDemo:false, stack:'Node.js · OpenAI GPT-4 · Whisper API · Express',                     problem:'Manual notes are slow — action items get lost',                       solution:'Audio to transcript to owner-tagged action items, automated',        challenge:'Chunked audio + structured GPT-4 extraction in one pipeline',        github:'github.com/rutvik076/meeting-assistant' },
+    aidevmemory: { name:'AI Dev Memory',               wip:true,              isNew:true,  hasDemo:false, stack:'Tauri · React + TypeScript · FastAPI · SQLite · ChromaDB (roadmap)',   problem:'Developer fixes and snippets get lost — same problems get solved twice', solution:'Local desktop app: save, tag, and search dev memories — no cloud, no telemetry', challenge:'Embedding Rust (Tauri) + Python (FastAPI) + React in one offline desktop app', github:'github.com/rutvik076' }
   };
 
   function L(c,h){ return {cls:c,html:h}; }
