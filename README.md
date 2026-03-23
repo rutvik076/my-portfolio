@@ -17,28 +17,6 @@ my-portfolio/
     └── ... (other images)
 ```
 
-## Deploy to Vercel
-
-1. Push this folder to GitHub
-2. Go to vercel.com → New Project → Import repo
-3. No build config needed — Vercel serves `index.html` directly
-4. Done — live URL in ~30 seconds
-
-## Deploy to GitHub Pages
-
-1. Push to GitHub
-2. Settings → Pages → Source: main branch / root
-3. Live at `https://rutvik076.github.io/my-portfolio`
-
-## Local preview
-
-Just open `index.html` in any browser. No server needed.
-
-## Update resume
-
-Replace `assets/resume-rutvik.pdf` with your latest PDF.
-The filename must stay the same, or update line 376 in `index.html`.
-
 ## Terminal commands
 
 | Command | Output |
