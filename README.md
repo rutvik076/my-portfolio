@@ -1,4 +1,4 @@
-# Rutvik Patel — Portfolio
+# Portfolio
 
 Personal portfolio website. Single-file, no build step, no dependencies.
 
